@@ -42,7 +42,7 @@ export default function Home(): React.JSX.Element {
         <FetchModData>
             {(data) => <ModTable data={data as ProjectMetadata} />}
         </FetchModData>
-          <HomepageFeatures />
+          {/*<HomepageFeatures />*/}
       </main>
     </Layout>
   );
