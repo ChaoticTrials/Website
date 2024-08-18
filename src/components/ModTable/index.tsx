@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './styles.module.css';
+import styles from './styles.module.css';
 import {ProjectMetadata} from "@site/src/components/LoadProjectData";
 
 interface ModTableProps {
@@ -36,16 +36,9 @@ const ModTable: React.FC<ModTableProps> = ({data}) => {
                     <input
                         id="mx-mods-table-search-input"
                         type="text"
-                        className="mx-wiki-input"
+                        className={styles.mxWikiInput}
                         placeholder="Search"
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        style={{
-                            width: '18.75rem',
-                            padding: '0.5rem',
-                            borderRadius: '2rem',
-                            border: '0px',
-                            backgroundColor: '#ebedf0'
-                        }}
                     />
                 </form>
             </div>

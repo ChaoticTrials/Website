@@ -1,7 +1,12 @@
-.mx-wiki-input {
+input.mxWikiInput {
+    width: 18.75rem;
+    height: 2rem;
     padding: 5px;
-    border-radius: 5rem;
-    border: 1px solid #ccc;
+    border-radius: 2rem;
+    border: 0;
+    font-size: 1rem;
+    color: var(--ifm-navbar-search-input-color);
+    background-color: var(--ifm-navbar-search-input-background-color);
 }
 
 table {
@@ -24,6 +29,6 @@ tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-.mx-wiki-hidden {
+.mxWikiHidden {
     display: none;
 }
