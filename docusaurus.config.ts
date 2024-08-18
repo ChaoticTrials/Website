@@ -56,13 +56,13 @@ const config: Config = {
     ],
 
     themeConfig: {
-        // Replace with your project's social card
-        image: 'img/docusaurus-social-card.jpg',
+        // image: 'img/docusaurus-social-card.jpg',
         navbar: {
             title: 'Chaotic Trials',
             logo: {
                 alt: 'Chaotic Trials Logo',
-                src: 'img/logo.svg',
+                src: 'img/logoDark.svg',
+                srcDark: 'img/logoLight.svg',
             },
             items: [
                 {
