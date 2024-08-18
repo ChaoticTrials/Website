@@ -8,7 +8,7 @@ import ModTable from "@site/src/components/ModTable";
 
 import styles from './index.module.css';
 import React from "react";
-import FetchModData from "@site/src/components/LoadProjectData";
+import FetchModData, {ProjectMetadata} from "@site/src/components/LoadProjectData";
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -35,12 +35,12 @@ export default function Home(): React.JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
+      title={siteConfig.title}
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
         <FetchModData>
-            {(data) => <ModTable data={data} />}
+            {(data) => <ModTable data={data as ProjectMetadata} />}
         </FetchModData>
           <HomepageFeatures />
       </main>

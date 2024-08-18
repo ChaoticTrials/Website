@@ -1,11 +1,43 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 
-interface FetchModDataProps {
-    children: (data: any) => React.ReactNode;
+export interface Project {
+    name: string;
+    slug: string | { cf: string; mr: string };
+    cf_id: string;
+    mr_id?: string;
+    github?: string;
+    maintained: boolean;
+    wiki_url?: string;
+    yt_video?: {
+        type: string;
+        id: string;
+    };
 }
 
-const FetchModData: React.FC<FetchModDataProps> = ({ children }) => {
-    const [data, setData] = useState<any>(null);
+export interface ProjectMetadata {
+    wiki_url: string;
+    github: {
+        base_url: string;
+        badge_url: string;
+    };
+    curseforge: {
+        base_url: string;
+        badge_url: string;
+    };
+    modrinth: {
+        base_url: string;
+        badge_url: string;
+    };
+    discord_invite: string;
+    projects: Project[];
+}
+
+interface FetchModDataProps {
+    children: (data: ProjectMetadata) => React.ReactNode;
+}
+
+const FetchModData: React.FC<FetchModDataProps> = ({children}) => {
+    const [data, setData] = useState<ProjectMetadata | null>(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -14,7 +46,7 @@ const FetchModData: React.FC<FetchModDataProps> = ({ children }) => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                const jsonData = await response.json();
+                const jsonData: ProjectMetadata = await response.json();
                 setData(jsonData);
             } catch (error) {
                 console.error('Fetch error:', error);

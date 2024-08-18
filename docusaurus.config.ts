@@ -11,7 +11,7 @@ const config: Config = {
     baseUrl: '/',
 
     organizationName: 'ChaoticTrials',
-    projectName: 'ModMeta',
+    projectName: 'Website',
 
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',

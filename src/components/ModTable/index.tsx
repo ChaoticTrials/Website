@@ -1,42 +1,14 @@
 import React, {useState} from 'react';
 import './styles.module.css';
-
-interface Project {
-    name: string;
-    slug: string | { cf: string; mr: string };
-    cf_id: string;
-    mr_id?: string;
-    github?: string;
-    maintained: boolean;
-    wiki_url?: string;
-    yt_video?: {
-        type: string;
-        id: string;
-    };
-}
+import {ProjectMetadata} from "@site/src/components/LoadProjectData";
 
 interface ModTableProps {
-    data: {
-        wiki_url: string;
-        github: {
-            base_url: string;
-            badge_url: string;
-        };
-        curseforge: {
-            base_url: string;
-            badge_url: string;
-        };
-        modrinth: {
-            base_url: string;
-            badge_url: string;
-        };
-        discord_invite: string;
-        projects: Project[];
-    };
+    data?: ProjectMetadata;
 }
 
 const ModTable: React.FC<ModTableProps> = ({data}) => {
     const [searchTerm, setSearchTerm] = useState('');
+    const [showVersions, setShowVersions] = useState(false);
 
     if (!data) {
         return <div>Loading...</div>;
@@ -52,13 +24,13 @@ const ModTable: React.FC<ModTableProps> = ({data}) => {
 
     return (
         <div style={{
-                 display: 'flex',
-                 flexDirection: 'column',
-                 alignItems: 'center',
-                 justifyContent: 'center',
-                 padding: '2rem 0',
-                 minHeight: '100vh',
-             }}>
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '2rem 0',
+            minHeight: '100vh',
+        }}>
             <div style={{float: 'left', display: 'flex', justifyContent: 'center'}}>
                 <form onSubmit={(e) => e.preventDefault()}>
                     <input
@@ -67,12 +39,17 @@ const ModTable: React.FC<ModTableProps> = ({data}) => {
                         className="mx-wiki-input"
                         placeholder="Search"
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        style={{ width: '18.75rem', padding: '0.5rem' }}
+                        style={{
+                            width: '18.75rem',
+                            padding: '0.5rem',
+                            borderRadius: '2rem',
+                            border: '0px',
+                            backgroundColor: '#ebedf0'
+                        }}
                     />
                 </form>
             </div>
             <div style={{display: 'flex', alignItems: 'center'}}>
-
                 <table>
                     <thead>
                     <tr>
@@ -81,6 +58,21 @@ const ModTable: React.FC<ModTableProps> = ({data}) => {
                         <th style={{textAlign: 'center'}}>Modrinth</th>
                         <th style={{textAlign: 'center'}}>GitHub</th>
                         <th style={{textAlign: 'center'}}>Maintained</th>
+                        <th
+                            style={{textAlign: 'center', cursor: 'pointer'}}
+                            onClick={() => setShowVersions(!showVersions)}
+                        >
+                            <span style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                                Show available versions
+                                <span style={{
+                                    marginLeft: '0.5rem',
+                                    transform: showVersions ? 'rotate(90deg)' : 'rotate(0deg)',
+                                    transition: 'transform 0.3s',
+                                }}>
+                                    ➤
+                                </span>
+                            </span>
+                        </th>
                     </tr>
                     </thead>
                     <tbody>
@@ -101,10 +93,9 @@ const ModTable: React.FC<ModTableProps> = ({data}) => {
                             const githubUrl = project.github
                                 ? `${githubBaseUrl}${project.github}`
                                 : undefined;
-
                             return (
                                 <tr key={project.name}>
-                                    <td style={{textAlign: 'center'}}>
+                                    <td>
                                         <a
                                             href={
                                                 project.wiki_url ||
@@ -114,7 +105,7 @@ const ModTable: React.FC<ModTableProps> = ({data}) => {
                                             {project.name}
                                         </a>
                                     </td>
-                                    <td style={{textAlign: 'center'}}>
+                                    <td>
                                         <a href={cfUrl}>
                                             <img
                                                 src={cfBadgeUrl.replace('{}', project.cf_id)}
@@ -122,7 +113,7 @@ const ModTable: React.FC<ModTableProps> = ({data}) => {
                                             />
                                         </a>
                                     </td>
-                                    <td style={{textAlign: 'center'}}>
+                                    <td>
                                         {mrUrl ? (
                                             <a href={mrUrl}>
                                                 <img
@@ -134,7 +125,7 @@ const ModTable: React.FC<ModTableProps> = ({data}) => {
                                             "Not available"
                                         )}
                                     </td>
-                                    <td style={{textAlign: 'center'}}>
+                                    <td>
                                         {githubUrl ? (
                                             <a href={githubUrl}>
                                                 <img
@@ -146,8 +137,24 @@ const ModTable: React.FC<ModTableProps> = ({data}) => {
                                             "Not available"
                                         )}
                                     </td>
-                                    <td style={{textAlign: 'center'}}>
+                                    <td>
                                         {project.maintained ? '✔️' : '❌'}
+                                    </td>
+
+                                    <td>
+                                        {showVersions && (
+                                            mrUrl ? (
+                                                <img
+                                                    src={`https://badges.moddingx.org/modrinth/versions/${project.mr_id}?style=flat`}
+                                                    alt={`Versions for ${project.name}`}
+                                                />
+                                            ) : (
+                                                <img
+                                                    src={`https://badges.moddingx.org/curseforge/versions/${project.cf_id}?style=flat`}
+                                                    alt={`Versions for ${project.name}`}
+                                                />
+                                            )
+                                        )}
                                     </td>
                                 </tr>
                             );
