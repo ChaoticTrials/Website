@@ -4,11 +4,11 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
-import data from '@site/data/projects.json';
 import ModTable from "@site/src/components/ModTable";
 
 import styles from './index.module.css';
 import React from "react";
+import FetchModData from "@site/src/components/LoadProjectData";
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -39,7 +39,9 @@ export default function Home(): React.JSX.Element {
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
-        <ModTable data={data} />
+        <FetchModData>
+            {(data) => <ModTable data={data} />}
+        </FetchModData>
           <HomepageFeatures />
       </main>
     </Layout>
