@@ -36,17 +36,19 @@ const ProjectBadges: React.FC<ProjectBadgesProps> = ({slug}) => {
 
                 return (
                     <div>
-                        <a href={cfUrl}>
-                            <img style={{paddingRight: "0.25rem"}}
-                                 src={data.curseforge.badge_url.replace('{}', project.cf_id)}
-                                 alt={`CurseForge ${project.name}`}
-                            />
-                        </a>
                         {mrUrl && (
                             <a href={mrUrl}>
                                 <img style={{paddingRight: "0.25rem"}}
                                      src={data.modrinth.badge_url.replace('{}', project.mr_id!)}
                                      alt={`Modrinth ${project.name}`}
+                                />
+                            </a>
+                        )}
+                        {cfUrl && (
+                            <a href={cfUrl}>
+                                <img style={{paddingRight: "0.25rem"}}
+                                     src={data.curseforge.badge_url.replace('{}', project.cf_id)}
+                                     alt={`CurseForge ${project.name}`}
                                 />
                             </a>
                         )}
