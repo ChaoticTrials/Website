@@ -2,6 +2,12 @@
 
 ## Docusaurus
 
+### Current State
+
+This page is currently under development. For wiki pages of my mods, please
+visit [Chaotic Trials Wiki](https://wiki.chaotictrials.de/). You can find the current deployment of the website
+at [Chaotic Trials Staging](https://staging.chaotictrials.de/).
+
 ### Getting Started
 
 1. **Install Dependencies**
