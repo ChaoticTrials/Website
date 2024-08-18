@@ -1,3 +1,7 @@
+---
+description: All executable commands by normal users
+---
+
 # End user/commands
 ## Create an own island
 If users are allowed to create islands with their own command, you can use `/skyblock create <name> <players>`. 

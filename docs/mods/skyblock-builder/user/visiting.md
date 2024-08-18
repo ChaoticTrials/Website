@@ -1,3 +1,7 @@
+---
+description: Everything about visiting teams and manage permission
+---
+
 # Visiting
 ## Visiting other islands
 If visits are enabled in the config, and a team enabled visiting, you can visit an island with `/skyblock visit <team>`.

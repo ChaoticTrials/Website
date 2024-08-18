@@ -1,3 +1,7 @@
+---
+description: Everything about requesting to join other teams
+---
+
 # Join requests
 ## Sending a join request
 You can send a join request to all teams if you're currently in no team by using `/skyblock join <team>`. That will 

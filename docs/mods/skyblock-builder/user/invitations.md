@@ -1,3 +1,7 @@
+---
+description: Everything about inviting other players
+---
+
 # Invitations
 ## Inviting users
 Inviting users
