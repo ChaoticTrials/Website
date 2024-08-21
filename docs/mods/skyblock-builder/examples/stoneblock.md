@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Stoneblock
 ![Starting template](/img/projects/skyblock-builder/examples/stoneblock/start_template.png)
-_[Download](https://raw.githubusercontent.com/ChaoticTrials/SkyblockBuilder/gh-pages/assets/examples/downloads/1.16.x/stoneblock.zip)_
+_[Download](/img/projects/skyblock-builder/examples/downloads/1.16.x/stoneblock.zip)_
 
 To create a stoneblock like modpack, you can simply set the surface settings as you can see in the config below.
 

@@ -5,7 +5,7 @@ sidebar_position: 3
 # Seablock
 
 ![Starting template](/img/projects/skyblock-builder/examples/seablock/start_template.png)
-_[Download](https://raw.githubusercontent.com/ChaoticTrials/SkyblockBuilder/gh-pages/assets/examples/downloads/1.16.x/seablock.zip)_
+_[Download](/img/projects/skyblock-builder/examples/downloads/1.16.x/seablock.zip)_
 
 To create a seablock like modpack, you can simply set the surface settings as you can see in the config below.
 
