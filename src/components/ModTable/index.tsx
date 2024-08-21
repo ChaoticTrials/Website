@@ -23,14 +23,7 @@ const ModTable: React.FC<ModTableProps> = ({data}) => {
     } = data;
 
     return (
-        <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '2rem 0',
-            minHeight: '100vh',
-        }}>
+        <div className={styles.tableDiv}>
             <div style={{float: 'left', display: 'flex', justifyContent: 'center'}}>
                 <form onSubmit={(e) => e.preventDefault()}>
                     <input
