@@ -40,3 +40,20 @@ tr:nth-child(even) {
     justify-content: center;
     padding: 2rem 0;
 }
+
+.tableContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tableWrapper {
+    max-width: 100%;
+    overflow: auto;
+}
+
+.responsiveTable {
+    width: 100%;
+    border-collapse: collapse;
+}

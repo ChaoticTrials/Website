@@ -35,118 +35,117 @@ const ModTable: React.FC<ModTableProps> = ({data}) => {
                     />
                 </form>
             </div>
-            <div style={{display: 'flex', alignItems: 'center'}}>
-                <table>
-                    <thead>
-                    <tr>
-                        <th style={{textAlign: 'center'}}>Name</th>
-                        <th style={{textAlign: 'center'}}>CurseForge</th>
-                        <th style={{textAlign: 'center'}}>Modrinth</th>
-                        <th style={{textAlign: 'center'}}>GitHub</th>
-                        <th style={{textAlign: 'center'}}>Maintained</th>
-                        <th
-                            style={{textAlign: 'center', cursor: 'pointer'}}
-                            onClick={() => setShowVersions(!showVersions)}
-                        >
-                            <span style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                                Show available versions
-                                <span style={{
-                                    marginLeft: '0.5rem',
-                                    transform: showVersions ? 'rotate(90deg)' : 'rotate(0deg)',
-                                    transition: 'transform 0.3s',
-                                }}>
-                                    ➤
-                                </span>
-                            </span>
-                        </th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {projects
-                        .filter((project) =>
-                            project.name.toLowerCase().includes(searchTerm.toLowerCase())
-                        )
-                        .map((project) => {
-                            const cfUrl =
-                                typeof project.slug === 'string'
-                                    ? `${cfBaseUrl}${project.slug}`
-                                    : `${cfBaseUrl}${project.slug.cf}`;
-                            const mrUrl =
-                                project.mr_id &&
-                                (typeof project.slug === 'string'
-                                    ? `${mrBaseUrl}${project.slug}`
-                                    : `${mrBaseUrl}${project.slug.mr}`);
-                            const githubUrl = project.github
-                                ? `${githubBaseUrl}${project.github}`
-                                : undefined;
-                            return (
-                                <tr key={project.name}>
-                                    <td>
-                                        <a
-                                            href={
-                                                project.wiki_url ||
-                                                `docs/mods/${typeof project.slug === 'string' ? project.slug : project.slug.cf}`
-                                            }
-                                        >
-                                            {project.name}
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href={cfUrl}>
-                                            <img
-                                                src={cfBadgeUrl.replace('{}', project.cf_id)}
-                                                alt={`CurseForge ${project.name}`}
-                                            />
-                                        </a>
-                                    </td>
-                                    <td>
-                                        {mrUrl ? (
-                                            <a href={mrUrl}>
+            <div className={styles.tableContainer}>
+                <div className={styles.tableWrapper}>
+                    <table className={styles.responsiveTable}>
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>CurseForge</th>
+                            <th>Modrinth</th>
+                            <th>GitHub</th>
+                            <th>Maintained</th>
+                            <th
+                                style={{cursor: 'pointer'}}
+                                onClick={() => setShowVersions(!showVersions)}
+                            >
+                                    <span style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                                        Show available versions
+                                        <span style={{
+                                            marginLeft: '0.5rem',
+                                            transform: showVersions ? 'rotate(90deg)' : 'rotate(0deg)',
+                                            transition: 'transform 0.3s',
+                                        }}>
+                                            ➤
+                                        </span>
+                                    </span>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {projects
+                            .filter((project) =>
+                                project.name.toLowerCase().includes(searchTerm.toLowerCase())
+                            )
+                            .map((project) => {
+                                const cfUrl =
+                                    typeof project.slug === 'string'
+                                        ? `${cfBaseUrl}${project.slug}`
+                                        : `${cfBaseUrl}${project.slug.cf}`;
+                                const mrUrl =
+                                    project.mr_id &&
+                                    (typeof project.slug === 'string'
+                                        ? `${mrBaseUrl}${project.slug}`
+                                        : `${mrBaseUrl}${project.slug.mr}`);
+                                const githubUrl = project.github
+                                    ? `${githubBaseUrl}${project.github}`
+                                    : undefined;
+                                return (
+                                    <tr key={project.name}>
+                                        <td>
+                                            <a
+                                                href={
+                                                    project.wiki_url ||
+                                                    `docs/mods/${typeof project.slug === 'string' ? project.slug : project.slug.cf}`
+                                                }
+                                            >
+                                                {project.name}
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href={cfUrl}>
                                                 <img
-                                                    src={mrBadgeUrl.replace('{}', project.mr_id!)}
-                                                    alt={`Modrinth ${project.name}`}
+                                                    src={cfBadgeUrl.replace('{}', project.cf_id)}
+                                                    alt={`CurseForge ${project.name}`}
                                                 />
                                             </a>
-                                        ) : (
-                                            "Not available"
-                                        )}
-                                    </td>
-                                    <td>
-                                        {githubUrl ? (
-                                            <a href={githubUrl}>
-                                                <img
-                                                    src={githubBadgeUrl.replace('{}', project.github!)}
-                                                    alt={`GitHub ${project.name}`}
-                                                />
-                                            </a>
-                                        ) : (
-                                            "Not available"
-                                        )}
-                                    </td>
-                                    <td>
-                                        {project.maintained ? '✔️' : '❌'}
-                                    </td>
-
-                                    <td>
-                                        {showVersions && (
-                                            mrUrl ? (
-                                                <img
-                                                    src={`https://badges.moddingx.org/modrinth/versions/${project.mr_id}?style=flat`}
-                                                    alt={`Versions for ${project.name}`}
-                                                />
+                                        </td>
+                                        <td>
+                                            {mrUrl ? (
+                                                <a href={mrUrl}>
+                                                    <img
+                                                        src={mrBadgeUrl.replace('{}', project.mr_id!)}
+                                                        alt={`Modrinth ${project.name}`}
+                                                    />
+                                                </a>
                                             ) : (
-                                                <img
-                                                    src={`https://badges.moddingx.org/curseforge/versions/${project.cf_id}?style=flat`}
-                                                    alt={`Versions for ${project.name}`}
-                                                />
-                                            )
-                                        )}
-                                    </td>
-                                </tr>
-                            );
-                        })}
-                    </tbody>
-                </table>
+                                                "Not available"
+                                            )}
+                                        </td>
+                                        <td>
+                                            {githubUrl ? (
+                                                <a href={githubUrl}>
+                                                    <img
+                                                        src={githubBadgeUrl.replace('{}', project.github!)}
+                                                        alt={`GitHub ${project.name}`}
+                                                    />
+                                                </a>
+                                            ) : (
+                                                "Not available"
+                                            )}
+                                        </td>
+                                        <td>{project.maintained ? '✔️' : '❌'}</td>
+                                        <td>
+                                            {showVersions && (
+                                                mrUrl ? (
+                                                    <img
+                                                        src={`https://badges.moddingx.org/modrinth/versions/${project.mr_id}?style=flat`}
+                                                        alt={`Versions for ${project.name}`}
+                                                    />
+                                                ) : (
+                                                    <img
+                                                        src={`https://badges.moddingx.org/curseforge/versions/${project.cf_id}?style=flat`}
+                                                        alt={`Versions for ${project.name}`}
+                                                    />
+                                                )
+                                            )}
+                                        </td>
+                                    </tr>
+                                );
+                            })}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     );
