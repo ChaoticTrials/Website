@@ -35,7 +35,7 @@ const config: Config = {
                 docs: {
                     sidebarPath: './sidebars.ts',
                     editUrl:
-                        'https://github.com/ChaoticTrials/ModMeta/tree/main/',
+                        'https://github.com/ChaoticTrials/Website/tree/main/',
                 },
                 blog: {
                     showReadingTime: true,
@@ -43,7 +43,7 @@ const config: Config = {
                         type: ['rss', 'atom'],
                         xslt: true,
                     },
-                    editUrl: 'https://github.com/ChaoticTrials/ModMeta/tree/main/',
+                    editUrl: 'https://github.com/ChaoticTrials/Website/tree/main/',
                     onInlineTags: 'warn',
                     onInlineAuthors: 'warn',
                     onUntruncatedBlogPosts: 'warn',
@@ -73,7 +73,7 @@ const config: Config = {
                 },
                 // {to: '/blog', label: 'Blog', position: 'left'},
                 {
-                    href: 'https://github.com/ChaoticTrials/ModMeta',
+                    href: 'https://github.com/ChaoticTrials/Website',
                     label: 'GitHub',
                     position: 'right',
                 },
@@ -96,7 +96,7 @@ const config: Config = {
                     items: [
                         {
                             label: 'Discord',
-                            href: 'https://chaotictrials.de/discord',
+                            href: 'https://discord.chaotictrials.de',
                         },
                     ],
                 },
@@ -109,15 +109,15 @@ const config: Config = {
                         // },
                         {
                             label: 'Modrinth',
-                            href: 'https://chaotictrials.de/modrinth',
+                            href: 'https://modrinth.com/user/MelanX',
                         },
                         {
                             label: 'CurseForge',
-                            href: 'https://chaotictrials.de/curseforge',
+                            href: 'https://www.curseforge.com/members/melanx',
                         },
                         {
                             label: 'GitHub',
-                            href: 'https://github.com/facebook/docusaurus',
+                            href: 'https://github.com/ChaoticTrials',
                         },
                     ],
                 },
