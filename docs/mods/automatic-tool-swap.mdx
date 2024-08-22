@@ -1,0 +1,66 @@
+# Automatic Tool Swap
+
+import ProjectBadges from '@site/src/components/LoadProjectBadges';
+import ResponsiveIframe from '@site/src/components/ResponsiveIframe';
+
+<ProjectBadges slug="automatic-tool-swap" />
+
+<br />
+*Switches to the most effective mining tool in your hotbar*
+
+## Config
+
+### sneak_to_prevent
+- **Default:** `true`
+- **Description:** If enabled, sneaking prevents tool swapping.
+
+```properties
+sneak_to_prevent=true
+```
+
+### sorttype
+- **Default:** `LEVEL`
+- **Description:** Sets the mode for tool selection:
+    - `LEVEL`: Sorted by harvest level, lowest first
+    - `LEVEL_INVERTED`: Sorted by harvest level, highest first
+    - `LEFT_TO_RIGHT`: Sorted from left to right
+    - `RIGHT_TO_LEFT`: Sorted from right to left
+    - `ENCHANTED_FIRST`: Sorted by harvest level, highest enchanted item first
+    - `ENCHANTED_LAST`: Sorted by harvest level, highest unenchanted item first
+
+Allowed Values: `LEVEL`, `LEVEL_INVERTED`, `LEFT_TO_RIGHT`, `RIGHT_TO_LEFT`, `ENCHANTED_FIRST`, `ENCHANTED_LAST`
+
+```properties
+sorttype="LEVEL"
+```
+
+### save
+- **Default:** `false`
+- **Description:** If enabled, tools with 1 durability left will be saved. This only applies to breaking a block and
+  does not affect actions like stripping, flattening, or tilling.
+
+```properties
+save=true
+```
+
+### min_durability
+- **Default:** `1`
+- **Range:** `> 1`
+- **Description:** Minimum durability an item must have to be saved.
+
+```properties
+min_durability=1
+```
+
+### ignore_harvest_level
+- **Default:** `true`
+- **Description:** If enabled, the harvest level of tools will be ignored when breaking blocks. Otherwise, it will
+  always use the lowest possible tool.
+
+```properties
+ignore_harvest_level=false
+```
+
+## Showcase
+
+<ResponsiveIframe videoId="NYH2w773S84" />
