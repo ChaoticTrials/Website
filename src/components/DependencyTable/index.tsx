@@ -10,6 +10,35 @@ interface Project {
     name: string;
 }
 
+// Define a global constant for the headers
+const HEADERS = {
+    'User-Agent': 'GitHub@ChaoticTrials/Website'
+};
+
+const CACHE_EXPIRATION_MS = 5 * 60 * 1000;
+
+const setCache = (key: string, data: any) => {
+    const timestampedData = {
+        timestamp: Date.now(),
+        data
+    };
+
+    localStorage.setItem(key, JSON.stringify(timestampedData));
+};
+
+const getCache = (key: string) => {
+    const cachedItem = localStorage.getItem(key);
+    if (!cachedItem) return null;
+
+    const { timestamp, data } = JSON.parse(cachedItem);
+    if (Date.now() - timestamp > CACHE_EXPIRATION_MS) {
+        localStorage.removeItem(key);
+        return null;
+    }
+
+    return data;
+};
+
 const DependencyTable: React.FC<Props> = ({ slug }) => {
     const [projectData, setProjectData] = React.useState<any>(null);
     const [versionsData, setVersionsData] = React.useState<any>(null);
@@ -18,12 +47,21 @@ const DependencyTable: React.FC<Props> = ({ slug }) => {
 
     React.useEffect(() => {
         const fetchProjectData = async () => {
-            try {
-                const response = await fetch(`https://api.modrinth.com/v3/project/${slug}`);
-                const data = await response.json();
-                setProjectData(data);
-            } catch (error) {
-                console.error('Error fetching project data:', error);
+            const cacheKey = `projectData_${slug}`;
+            const cachedData = getCache(cacheKey);
+            if (cachedData) {
+                setProjectData(cachedData);
+            } else {
+                try {
+                    const response = await fetch(`https://api.modrinth.com/v3/project/${slug}`, {
+                        headers: HEADERS
+                    });
+                    const data = await response.json();
+                    setProjectData(data);
+                    setCache(cacheKey, data);
+                } catch (error) {
+                    console.error('Error fetching project data:', error);
+                }
             }
         };
 
@@ -33,14 +71,12 @@ const DependencyTable: React.FC<Props> = ({ slug }) => {
     React.useEffect(() => {
         if (projectData && projectData.versions) {
             const fetchVersionsData = async () => {
-                try {
-                    const idsParam = JSON.stringify(projectData.versions);
-                    const response = await fetch(`https://api.modrinth.com/v3/versions?ids=${idsParam}`);
-                    const versions = await response.json();
-                    setVersionsData(versions);
-
+                const cacheKey = `versionsData_${slug}`;
+                const cachedData = getCache(cacheKey);
+                if (cachedData) {
+                    setVersionsData(cachedData);
                     const projectIds: { [key: string]: boolean } = {};
-                    versions.forEach((version: any) => {
+                    cachedData.forEach((version: any) => {
                         if (version.dependencies) {
                             version.dependencies.forEach((dependency: any) => {
                                 projectIds[dependency.project_id] = dependency.dependency_type === "required";
@@ -48,26 +84,55 @@ const DependencyTable: React.FC<Props> = ({ slug }) => {
                         }
                     });
                     setUniqueProjectIds(projectIds);
-                } catch (error) {
-                    console.error('Error fetching versions data:', error);
+                } else {
+                    try {
+                        const idsParam = JSON.stringify(projectData.versions);
+                        const response = await fetch(`https://api.modrinth.com/v3/versions?ids=${idsParam}`, {
+                            headers: HEADERS
+                        });
+                        const versions = await response.json();
+                        setVersionsData(versions);
+                        setCache(cacheKey, versions);
+
+                        const projectIds: { [key: string]: boolean } = {};
+                        versions.forEach((version: any) => {
+                            if (version.dependencies) {
+                                version.dependencies.forEach((dependency: any) => {
+                                    projectIds[dependency.project_id] = dependency.dependency_type === "required";
+                                });
+                            }
+                        });
+                        setUniqueProjectIds(projectIds);
+                    } catch (error) {
+                        console.error('Error fetching versions data:', error);
+                    }
                 }
             };
 
             fetchVersionsData();
         }
-    }, [projectData]);
+    }, [projectData, slug]);
 
     React.useEffect(() => {
         const projectIdsArray = Object.keys(uniqueProjectIds);
         if (projectIdsArray.length > 0) {
             const fetchProjectsData = async () => {
-                try {
-                    const idsParam = JSON.stringify(projectIdsArray);
-                    const response = await fetch(`https://api.modrinth.com/v3/projects?ids=${idsParam}`);
-                    const data = await response.json();
-                    setProjectsData(data.sort((a: Project, b: Project) => a.name.localeCompare(b.name)));
-                } catch (error) {
-                    console.error('Error fetching projects data:', error);
+                const cacheKey = `projectsData_${JSON.stringify(projectIdsArray)}`;
+                const cachedData = getCache(cacheKey);
+                if (cachedData) {
+                    setProjectsData(cachedData.sort((a: Project, b: Project) => a.name.localeCompare(b.name)));
+                } else {
+                    try {
+                        const idsParam = JSON.stringify(projectIdsArray);
+                        const response = await fetch(`https://api.modrinth.com/v3/projects?ids=${idsParam}`, {
+                            headers: HEADERS
+                        });
+                        const data = await response.json();
+                        setProjectsData(data.sort((a: Project, b: Project) => a.name.localeCompare(b.name)));
+                        setCache(cacheKey, data);
+                    } catch (error) {
+                        console.error('Error fetching projects data:', error);
+                    }
                 }
             };
 
