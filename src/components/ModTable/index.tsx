@@ -15,7 +15,6 @@ const ModTable: React.FC<ModTableProps> = ({data}) => {
     }
 
     const {
-        wiki_url,
         github: {base_url: githubBaseUrl, badge_url: githubBadgeUrl},
         curseforge: {base_url: cfBaseUrl, badge_url: cfBadgeUrl},
         modrinth: {base_url: mrBaseUrl, badge_url: mrBadgeUrl},
@@ -86,7 +85,7 @@ const ModTable: React.FC<ModTableProps> = ({data}) => {
                                             <a
                                                 href={
                                                     project.wiki_url ||
-                                                    `docs/mods/${typeof project.slug === 'string' ? project.slug : project.slug.cf}`
+                                                    `docs/mods/${typeof project.slug === 'string' ? project.slug : project.slug.mr}`
                                                 }
                                             >
                                                 {project.name}
