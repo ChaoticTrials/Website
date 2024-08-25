@@ -1,0 +1,70 @@
+# MoreVanillaArmor
+
+import ProjectHeader from '@site/src/components/ProjectHeader';
+
+<ProjectHeader slug="morevanillaarmor" />
+
+## Armor Configuration Table
+
+| Material   | [Set Bonus](#set-bonus)                                           | [Durability Factor](#durability-factor) | Damage Reduction <br/> Head, Chest, Leggings, Boots    | Enchantability | Toughness | Knockback Resistance |
+|------------|-------------------------------------------------------------------|-----------------------------------------|--------------------------------------------------------|----------------|-----------|----------------------|
+| Bone       | ❌                                                                 | 7                                       | 2, 3, 2, 1                                             | 20             | 0.0       | 0.0                  |
+| Coal       | ❌                                                                 | 6                                       | 1, 2, 1, 1                                             | 10             | 0.0       | 0.0                  |
+| Emerald    | ❌                                                                 | 25                                      | 2, 6, 4, 2                                             | 25             | 1.9       | 0.0                  |
+| Ender      | ❌                                                                 | 21                                      | 2, 5, 3, 1                                             | 15             | 0.1       | 0.0                  |
+| Fiery      | [Fire Immunity](#fire-immunity)                                   | 13                                      | 1, 4, 3, 1                                             | 13             | 0.0       | 0.0                  |
+| Glowstone  | ❌                                                                 | 7                                       | 1, 3, 2, 1                                             | 15             | 0.0       | 0.0                  |
+| Lapis      | ❌                                                                 | 8                                       | 1, 5, 3, 1                                             | 30             | 0.0       | 0.0                  |
+| Nether     | ❌                                                                 | 11                                      | 1, 4, 2, 2                                             | 20             | 0.1       | 0.0                  |
+| Obsidian   | [Heavyness](#heavyness)<br/>[Damage Reduction](#damage-reduction) | 40                                      | 2, 8, 6, 3                                             | 8              | 1.5       | 0.3                  |
+| Paper      | ❌                                                                 | 1                                       | 0, 2, 1, 0                                             | 13             | 0.0       | 0.0                  |
+| Prismarine | ❌                                                                 | 14                                      | 1, 5, 3, 2                                             | 15             | 0.1       | 0.0                  |
+| Quartz     | ❌                                                                 | 7                                       | 1, 2, 1, 1                                             | 15             | 0.0       | 0.0                  |
+| Redstone   | [Power Source](#power-source)                                     | 8                                       | 1, 5, 3, 1                                             | 15             | 0.0       | 0.0                  |
+| Slime      | [Damage Reduction](#damage-reduction)                             | 36                                      | 3, 8, 6, 4                                             | 14             | 0.1       | 0.2                  |
+| Stone      | ❌                                                                 | 4                                       | 1, 3, 1, 1                                             | 7              | 0.0       | 0.0                  |
+| Wood       | ❌                                                                 | 8                                       | 2, 3, 2, 1                                             | 5              | 0.0       | 0.0                  |
+| *Iron*     | ❌                                                                 | 15                                      | 2, 6, 5, 2                                             | 9              | 0.0       | 0.0                  |
+
+*Iron was added just for reference*
+
+## Set Bonus
+A set bonus applies to the player only when they are wearing all parts of a specific armor set unless specified
+otherwise, like [Heavyness](#heavyness), which is dynamic for each part.
+
+### Damage Reduction
+:::note
+This has nothing to do with the 4 numbers in the "Damage Reduction" column of the table above.
+:::
+The "Damage Reduction" effect helps reduce damage from various sources, except falling. For example, a level 1 effect
+reduces damage by 2 points. However, players will always take at least 0.25 damage to maintain game balance.
+
+### Fire Immunity
+Grants immunity to fire. When burning, the player does not receive any damage.
+
+### Heavyness
+The "Heavyness" effect increases fall damage. For instance, a level 1 effect increases fall damage by 50%, level 2
+doubles it (100%), and level 3 increases it by 150%.
+
+The level is dynamic:
+
+| Armor Part | Additional Level(s) |
+|------------|---------------------|
+| Helmet     | 1                   |
+| Chest      | 3                   |
+| Leggings   | 2                   |
+| Boots      | 1                   |
+
+This makes for a total of 7 levels, increasing fall damage by 350%. Luckily, Obsidian also has
+the [Damage Reduction](#damage-reduction) set bonus.
+
+### Power Source
+Activates redstone contraptions when the player walks. This only works when there is some air around the contraption (
+for placing an invisible block that activates redstone).
+
+## Durability Factor
+- Durability factor multipliers:
+    - 11 for Head
+    - 16 for Chestplate
+    - 15 for Leggings
+    - 13 for Boots
