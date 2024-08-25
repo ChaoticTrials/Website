@@ -2,6 +2,7 @@ import * as React from 'react';
 
 interface Props {
     slug: string;
+    mcVersion: string;
 }
 
 interface Project {
@@ -39,7 +40,7 @@ const getCache = (key: string) => {
     return data;
 };
 
-const DependencyTable: React.FC<Props> = ({ slug }) => {
+const DependencyTable: React.FC<Props> = ({ slug, mcVersion }) => {
     const [projectData, setProjectData] = React.useState<any>(null);
     const [versionsData, setVersionsData] = React.useState<any>(null);
     const [uniqueProjectIds, setUniqueProjectIds] = React.useState<{ [key: string]: boolean }>({});
@@ -75,40 +76,23 @@ const DependencyTable: React.FC<Props> = ({ slug }) => {
                 const cachedData = getCache(cacheKey);
                 if (cachedData) {
                     setVersionsData(cachedData);
-                    const projectIds: { [key: string]: boolean } = {};
-                    cachedData.forEach((version: any) => {
-                        if (version.dependencies) {
-                            version.dependencies.forEach((dependency: any) => {
-                                projectIds[dependency.project_id] = dependency.dependency_type === "required";
-                            });
-                        }
-                    });
-                    setUniqueProjectIds(projectIds);
+                    setUniqueProjectIds(processVersions(cachedData, mcVersion));
                 } else {
                     try {
                         const idsParam = JSON.stringify(projectData.versions);
                         const response = await fetch(`https://api.modrinth.com/v3/versions?ids=${idsParam}`, {
-                            headers: HEADERS
+                            headers: HEADERS,
                         });
+
                         const versions = await response.json();
                         setVersionsData(versions);
                         setCache(cacheKey, versions);
-
-                        const projectIds: { [key: string]: boolean } = {};
-                        versions.forEach((version: any) => {
-                            if (version.dependencies) {
-                                version.dependencies.forEach((dependency: any) => {
-                                    projectIds[dependency.project_id] = dependency.dependency_type === "required";
-                                });
-                            }
-                        });
-                        setUniqueProjectIds(projectIds);
+                        setUniqueProjectIds(processVersions(versions, mcVersion));
                     } catch (error) {
                         console.error('Error fetching versions data:', error);
                     }
                 }
             };
-
             fetchVersionsData();
         }
     }, [projectData, slug]);
@@ -117,7 +101,7 @@ const DependencyTable: React.FC<Props> = ({ slug }) => {
         const projectIdsArray = Object.keys(uniqueProjectIds);
         if (projectIdsArray.length > 0) {
             const fetchProjectsData = async () => {
-                const cacheKey = `projectsData_${JSON.stringify(projectIdsArray)}`;
+                const cacheKey = `projectsData_${JSON.stringify(projectIdsArray)}_${mcVersion}`;
                 const cachedData = getCache(cacheKey);
                 if (cachedData) {
                     setProjectsData(cachedData.sort((a: Project, b: Project) => a.name.localeCompare(b.name)));
@@ -175,6 +159,18 @@ const DependencyTable: React.FC<Props> = ({ slug }) => {
             )}
         </div>
     );
+};
+
+const processVersions = (versions: any[], mcVersion: string) => {
+    const projectIds: { [key: string]: boolean } = {};
+    versions.forEach((version: any) => {
+        if (version.dependencies && version.game_versions && version.game_versions.some((gv: string) => gv.startsWith(mcVersion))) {
+            version.dependencies.forEach((dependency: any) => {
+                projectIds[dependency.project_id] = dependency.dependency_type === "required";
+            });
+        }
+    });
+    return projectIds;
 };
 
 export default DependencyTable;

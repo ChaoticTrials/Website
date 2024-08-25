@@ -4,13 +4,14 @@ import DependencyTable from '@site/src/components/DependencyTable';
 
 interface Props {
     slug: string;
+    mcVersion: string;
 }
 
-const ProjectHeader: React.FC<Props> = ({slug}) => {
+const ProjectHeader: React.FC<Props> = ({slug, mcVersion}) => {
     return (
         <div>
             <ProjectBadges slug={slug}/>
-            <DependencyTable slug={slug}/>
+            <DependencyTable slug={slug} mcVersion={mcVersion || '1.16'}/>
         </div>
     );
 };
