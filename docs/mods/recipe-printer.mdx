@@ -1,0 +1,40 @@
+# Recipe Printer
+
+import ProjectHeader from '@site/src/components/ProjectHeader';
+
+<ProjectHeader slug="recipe-printer" />
+
+This mod is for client use only and is not intended for modpacks. Do not attempt to join a server with this mod
+installed. It is primarily designed for content creators who want to showcase recipes or creative tabs.
+
+## Recipe Printing
+This feature allows you to print recipes as PNG images. To do this, use the following command:
+- `/recipeprinter recipe morevanillatools:emerald_pickaxe`
+
+![Example Recipe](/img/projects/recipe-printer/example_recipe.png)
+
+:::tip
+If [JEI](https://modrinth.com/mod/jei) is present, you can use this command instead:
+- `/recipeprinter fromJei morevanillatools:emerald_pickaxe`
+  
+This allows you to use recipe types that are not implemented by the mod itself but are integrated with JEI.
+:::
+
+To create all recipes by `morevanillatools`, you can use the following command:
+- `/recipeprinter recipe morevanillatools:*`
+
+## Creative Tabs
+You can also print creative tabs. To do this, use the following command:
+- `/recipeprinter itemgroup minecraft:tools`
+
+![Example Tab](/img/projects/recipe-printer/example_tab.png)
+
+## Output Path
+### Normal Recipes
+`<pack instance>/recipeprinter/recipes/<mod id>/<recipe id>.png`
+
+### JEI Recipes
+`<pack instance>/recipeprinter/jei/<mod id>/<recipe type>/<recipe id>.png`
+
+### Creative Tabs
+`<pack instance>/recipeprinter/item_groups/<tab name>.png`
