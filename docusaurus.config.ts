@@ -34,8 +34,7 @@ const config: Config = {
             {
                 docs: {
                     sidebarPath: './sidebars.ts',
-                    editUrl:
-                        'https://github.com/ChaoticTrials/Website/tree/main/',
+                    editUrl: 'https://github.com/ChaoticTrials/Website/tree/main/',
                 },
                 blog: {
                     showReadingTime: true,

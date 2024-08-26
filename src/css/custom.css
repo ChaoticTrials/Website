@@ -62,3 +62,21 @@ img.zoom {
 img.zoom:hover {
     transform: scale(1.05);
 }
+
+div > .two-columns-base {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div > .two-columns-left, div > .two-columns-right {
+    flex: 1 1 50%;
+    box-sizing: border-box;
+}
+
+div > .two-columns-left {
+    padding-right: 10px;
+}
+
+div > .two-columns-right {
+    padding-left: 10px;
+}
