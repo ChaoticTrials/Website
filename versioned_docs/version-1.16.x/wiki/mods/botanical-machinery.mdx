@@ -1,0 +1,108 @@
+---
+description: Automating Botania is easier than you think
+---
+
+# Botanical Machinery
+
+import ProjectHeader from '@site/src/components/ProjectHeader';
+
+<ProjectHeader slug="botanical-machinery" mcVersion="1.16" />
+
+**Botanical Machinery** is a cutting-edge mod by MelanX, designed as an addon
+for [Botania](https://modrinth.com/mod/botania). It revolutionizes farm management by seamlessly blending nature and
+technology. Leveraging the mystical properties of Elementium and Mana, this mod enables botanists to upgrade and
+optimize their machinery, making agricultural operations more efficient and compact. Experience the future of farming
+with **Botanical Machinery**, where ancient magic meets modern innovation.
+
+---
+
+:::info
+Basic information for each mana-using machine:
+- Can be powered by Mana Spreaders or Sparks
+- Capacities and mana consumption are configurable via the server config
+- Exact mana values can be disabled in the client config
+  :::
+
+### Alfheim Market
+The **Alfheim Market** is the Portal of Alfheim compacted into one block.
+
+| Option           | Value   |
+|------------------|---------|
+| Mana Consumption | 25/t    |
+| Input Slots      | 4       |
+| Output Slots     | 1       |
+| Mana Capacity    | 100,000 |
+
+### Industrial Agglomeration Factory
+The **Industrial Agglomeration Factory** replicates the Terrestrial Agglomeration Plate setup in a single block.
+
+| Option           | Value     |
+|------------------|-----------|
+| Mana Consumption | 5,000/t   |
+| Input Slots      | 3         |
+| Output Slots     | 1         |
+| Mana Capacity    | 1,000,000 |
+
+### Mana Battery
+The **Mana Battery** is a mana storage block. It has two slots: the left slot (➖) is for placing a mana-consuming item
+(e.g., Mana/Elementium gear) to repair it or a Mana Tablet to fill it with mana from the battery. To fill the **Mana
+Battery**, insert an item into the right slot (➕). If locked (see lock button), no items can be inserted or extracted.
+Items can also be added/removed using hoppers or pipes, with mana automatically drained or inserted into the item. Once
+completely filled or drained, the item can be extracted via hopper or pipe.
+
+A **creative** variant of the battery has unlimited transfer speed and constantly stores 5,000,000 mana. Mana can be
+transferred to other machines (from Botania or Botanical Machinery) using Sparks or Mana Spreaders. Placing a Botanical
+Machinery machine next to it will also transfer mana.
+
+| Option              | Value      |
+|---------------------|------------|
+| Mana Transfer Speed | 5,000/t    |
+| Input Slots         | 2          |
+| Mana Capacity       | 10,000,000 |
+
+### Mechanical Brewery
+The **Mechanical Brewery** is an enhanced version of the Botanical Brewery that automates the creation of brews.
+
+| Option           | Value             |
+|------------------|-------------------|
+| Mana Consumption | 50/t              |
+| Input Slots      | 6 + 1 (Container) |
+| Output Slots     | 1                 |
+| Mana Capacity    | 100,000           |
+
+### Mechanical Apothecary
+The **Mechanical Apothecary** automates the process of flower creation by utilizing water, seeds, and other ingredients.
+
+| Option          | Value          |
+|-----------------|----------------|
+| Input Slots     | 16 + 1 (Seeds) |
+| Output Slots    | 4              |
+| Recipe Duration | 20t            |
+| Water Capacity  | 8000/mB        |
+
+### Mechanical Mana Pool
+Functioning similarly to a standard Mana Pool, the **Mechanical Mana Pool** innovates by requiring catalysts to be
+placed within its inventory rather than beneath it.
+
+| Option           | Value            |
+|------------------|------------------|
+| Mana Consumption | ∞/t              |
+| Input Slots      | 1 + 1 (Catalyst) |
+| Output Slots     | 1                |
+| Mana Capacity    | 100,000          |
+
+### Mechanical Runic Altar
+The **Mechanical Runic Altar** simplifies rune creation and allows for automation using hoppers. When runes are
+finished, they will be moved into the output slot automatically.
+
+| Option           | Value               |
+|------------------|---------------------|
+| Mana Consumption | 100/t               |
+| Input Slots      | 16 + 1 (Livingrock) |
+| Output Slots     | 16                  |
+| Mana Capacity    | 250,000             |
+
+### Mechanical Daisy
+The **Mechanical Daisy** is a floating Pure Daisy capable of processing up to eight blocks simultaneously within a
+single compact block. It can handle both solid materials and fluids; fluids can be inserted using pipes or buckets.
+Resulting items can be extracted using hoppers or pipes.

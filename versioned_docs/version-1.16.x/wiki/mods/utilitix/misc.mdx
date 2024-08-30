@@ -1,0 +1,82 @@
+---
+title: Misc
+description: UtilitiX' random additions
+---
+
+# Miscellaneous
+
+import ResponsiveIframe from '@site/src/components/ResponsiveIframe';
+
+## Enchantments
+
+### Bell Range
+Increases the notification and glow range of the [Hand Bell](items.mdx#hand-bell) and [Mob Bell](items.mdx#mob-bell).
+
+## Mechanics
+
+### Better Mending
+<div class="two-columns-base">
+    <div class="two-columns-left">
+        When an item with Mending is damaged and lies on the ground with nearby XP orbs, the item will attract the XP orbs. This occurs within a 7-block radius from the item's position. The collected XP is then used to repair the item.
+        :::info
+        This feature can be disabled in the configuration.
+        :::
+    </div>
+    <div class="two-columns-right">
+        <ResponsiveIframe videoId="wi2w5wBHBHk" />
+    </div>
+</div>
+
+## Double Door Opening
+When two doors are placed next to each other with hinges in the center, both doors will open simultaneously.
+
+## Auto Replant
+When a seed item or sapling despawns, it will attempt to replant itself before discarding.
+
+## Minecarts
+
+### Ender Chest Minecart
+A minecart equipped with built-in ender chest functionality.
+
+### Stonecutter Minecart
+The Stonecutter Minecart can break blocks. By right-clicking, you can adjust the position of the saw. It will always
+break the block in front of the saw. The cart pauses while breaking a block and resumes its previous speed once done. It
+won't break a block at the same position consecutively, preventing static block breaking. Block drops are placed on the
+track, allowing collection with a hopper minecart.
+
+### Anvil Minecart
+The anvil minecart removes entities obstructing the track, pushing them off to allow other minecarts to pass safely. It
+causes minimal damage (about a quarter of a heart) to entities during the push.
+
+### Piston Minecart
+<div class="two-columns-base">
+    <div class="two-columns-left">
+        This minecart can place and replace rails. It has an inventory where new rails can be placed on the left side and retrieved rails can be collected from the right side. Redstone torches can be added to power the rails; these torches are automatically placed below the track if the rails can be powered.
+        The Piston Cart system has two primary modes: **Place** and **Replace**. Here's how each mode works:
+    </div>
+    <div class="two-columns-right">
+        <ResponsiveIframe videoId="IkzvrCyQhnk" />
+    </div>
+</div>
+
+#### Place Mode
+- **Function**: The `Place` mode is used to lay down new rails where none currently exist.
+- **Usage**:
+    - The Piston Cart will automatically detect if there is no rail at its current position and attempt to place a rail
+      from its inventory.
+    - Useful for laying down tracks in new areas, ensuring a continuous path for the cart to follow.
+
+#### Replace Mode
+- **Function**: The `Replace` mode is designed to replace existing rails with new ones.
+- **Usage**:
+    - The Piston Cart will check if there is an existing rail at its current position.
+    - If it finds a rail, it will remove the old rail and place a new one from its inventory.
+    - Ideal for upgrading or repairing existing tracks without manually removing the old rails first.
+
+:::info[tl;dr]
+- **Place**: Adds new rails where none exist.
+- **Replace**: Replaces existing rails with new ones.
+:::
+
+Choose the appropriate mode based on whether you need to lay new tracks or upgrade existing ones. Understanding these
+modes ensures efficient management of your rail system.

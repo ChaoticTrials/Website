@@ -3,7 +3,7 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 function getNextVersionName() {
-    return '1.17';
+    return '1.17.x';
 }
 
 const config: Config = {
@@ -42,6 +42,7 @@ const config: Config = {
                     versions: {
                         current: {
                             label: `${getNextVersionName()}`,
+                            banner: 'none'
                         },
                     },
                 },
@@ -93,12 +94,18 @@ const config: Config = {
                     label: 'Wiki',
                 },
                 {
-                    type: 'docSidebar',
+                    to: '/docs/next/porting',
                     sidebarId: 'porting',
                     position: 'left',
                     label: 'Porting Information',
                 },
                 // {to: '/blog', label: 'Blog', position: 'left'},
+                {
+                    type: 'docsVersionDropdown',
+                    position: 'right',
+                    // dropdownItemsAfter: [{to: '/wiki', label: 'All versions'}],
+                    dropdownActiveClassDisabled: true,
+                },
                 {
                     href: 'https://github.com/ChaoticTrials/Website',
                     label: 'GitHub',

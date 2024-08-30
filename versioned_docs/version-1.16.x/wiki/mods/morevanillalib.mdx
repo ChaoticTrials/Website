@@ -1,0 +1,103 @@
+---
+description: A library mod for a few of my mods
+---
+
+# MoreVanillaLib
+
+import ProjectHeader from '@site/src/components/ProjectHeader';
+
+<ProjectHeader slug="morevanillalib" mcVersion="1.16" />
+
+MoreVanillaLib serves as the core for my other vanilla-themed mods:
+- [MoreVanillaTools](https://modrinth.com/mod/morevanillatools)
+- [Vanilla Hammers](https://modrinth.com/mod/vanilla-hammers)
+- [Vanilla Excavators](https://modrinth.com/mod/vanilla-excavators)
+
+---
+
+## Materials
+
+| Material       | **Durability** | **Mining Speed** | **Harvest Level** | **[Double Drop](#double-drop) Chance** | **Special Ability**                                         |
+|----------------|----------------|------------------|-------------------|----------------------------------------|-------------------------------------------------------------|
+| **Bone**       | 176            | 3.9              | 0                 | ❌                                      | [Extra Damage](#extra-damage)<br/>[Head Drop](#head-drop)   |
+| **Coal**       | 145            | 3.9              | 0                 | 20%                                    |                                                             |
+| **Emerald**    | 1859           | 8.2              | 3                 | 0.1%                                   |                                                             |
+| **Ender**      | 666            | 3.7              | 2                 | ❌                                      | [Extra Damage](#extra-damage)                               |
+| **Fiery**      | 127            | 4.0              | 1                 | ❌                                      | [Auto Smelt](#auto-smelt)<br/>[Extra Damage](#extra-damage) |
+| **Glowstone**  | 123            | 3.0              | 1                 | ❌                                      | [Glowstone Drop](#glowstone-drop)                           |
+| **Lapis**      | 173            | 6.2              | 2                 | 20%                                    |                                                             |
+| **Nether**     | 188            | 3.9              | 1                 | ❌                                      |                                                             |
+| **Obsidian**   | 1337           | 4.7              | 3                 | ❌                                      |                                                             |
+| **Paper**      | 13             | 1.8              | 0                 | ❌                                      | [Paper Damage](#paper-damage)                               |
+| **Prismarine** | 225            | 6.0              | 2                 | ❌                                      | [Extra Damage](#extra-damage)                               |
+| **Quartz**     | 117            | 3.9              | 1                 | 20%                                    |                                                             |
+| **Redstone**   | 173            | 6.2              | 2                 | 20%                                    |                                                             |
+| **Slime**      | 123            | 5.2              | 1                 | ❌                                      | [Extra Damage](#extra-damage)                               |
+| **Wood**       | -              | 2.0              | 0                 | ❌                                      |                                                             |
+| **Stone**      | -              | 4.0              | 1                 | ❌                                      |                                                             |
+| **Iron**       | -              | 6.0              | 2                 | ❌                                      |                                                             |
+| **Gold**       | -              | 12.0             | 0                 | ❌                                      |                                                             |
+| **Diamond**    | -              | 8.0              | 3                 | 0.1%                                   |                                                             |
+| **Netherite**  | -              | 9.0              | 4                 | ❌                                      |                                                             |
+
+## Abilities
+### Auto Smelt
+Tools with Auto Smelt modify drops by replacing them with their furnace-processed output. This applies to block drops
+(e.g., Log -> Charcoal) and mob drops (e.g., Raw Beef -> Steak).
+
+### Double Drop
+The Double Drop feature allows specific ores to drop additional items when mined, depending on the tool's material. The
+chance for extra drops is configurable, and tools without the Silk Touch enchantment can trigger this feature. Diamond,
+Coal, Emerald, Lapis, Quartz, and Redstone ores have unique chances for Double Drops based on their respective
+configuration settings, see [materials](#materials) above.
+
+### Extra Damage
+Extra Damage is applied to specific entities when using axes and swords based on the tool type:
+
+| **Tool Type**  | **Affected Entities**         |
+|----------------|-------------------------------|
+| **Bone**       | Skeletons                     |
+| **Ender**      | Endermen and Endermites       |
+| **Fiery**      | Magma Cubes                   |
+| **Prismarine** | Guardians                     |
+| **Slime**      | Slimes, excluding Magma Cubes |
+
+:::info
+This effect applies to direct subclasses of the mentioned entities. If a mod uses the vanilla base class of these
+entities, they will also be affected.
+:::
+
+The default chance is 20% per hit, configurable in the [server config](#server).
+
+### Extra Drop
+Tools have a material-based chance to drop their repair material on each use (e.g., hitting a mob or mining a block).
+
+The default chance is 0.05% per use, configurable in the [server config](#server).
+
+### Glowstone Drop
+Glowstone blocks will always drop 4 Glowstone Dust.
+
+### Head Drop
+Defeating skeleton-type enemies may result in a rare drop of the enemy's head. This chance is influenced by the Fortune
+enchantment on the tool.
+
+The default chance is 5% per kill, configurable in the [server config](#server).
+
+### Paper Damage
+Using Paper tools introduces a chance for the player to inflict minor self-damage, humorously called a "paper cut". This
+can occur during tasks such as using items, destroying blocks, or hitting entities.
+
+The default chance is 10% per activity, configurable in the [server config](#server).
+
+## Enchantments
+The mod adds "Luck of Cheap Repairing," an enchantment that removes the repair cost in an anvil. This enchantment can be
+applied to all breakable items.
+
+## Config
+### Common
+You can choose whether only vanilla materials should be added. This setting affects only Vanilla Hammers and Vanilla
+Excavators. If enabled, only vanilla materials will be used for these tools.
+
+### Server
+The server config file is located in the `serverconfig` directory within the world directory. Here, you can adjust most
+values in the [materials table](#materials).
