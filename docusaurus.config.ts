@@ -75,9 +75,15 @@ const config: Config = {
             items: [
                 {
                     type: 'docSidebar',
-                    sidebarId: 'tutorialSidebar',
+                    sidebarId: 'wiki',
                     position: 'left',
                     label: 'Wiki',
+                },
+                {
+                    type: 'docSidebar',
+                    sidebarId: 'porting',
+                    position: 'left',
+                    label: 'Porting Information',
                 },
                 // {to: '/blog', label: 'Blog', position: 'left'},
                 {
