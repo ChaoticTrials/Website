@@ -1,5 +1,6 @@
 ---
 sidebar_position: 3
+description: Example Download for Seablock map
 ---
 
 # Seablock

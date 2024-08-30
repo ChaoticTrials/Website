@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+description: Example Download for Stoneblock map
 ---
 
 # Stoneblock

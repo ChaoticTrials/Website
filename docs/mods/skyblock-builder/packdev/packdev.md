@@ -1,3 +1,7 @@
+---
+description: Important information for pack developers
+---
+
 # Main setup
 ## Setting world type on single player as default
 You simply start the game once. It will generate a config called `forge-common.toml`. Change the only value in this

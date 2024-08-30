@@ -1,3 +1,7 @@
+---
+description: Important information for admins
+---
+
 # Managing teams
 ## Operators only
 Only an operator with permission level 2 or higher can change anything in the `/skyblock manage` category.
