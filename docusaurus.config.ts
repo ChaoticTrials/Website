@@ -2,6 +2,10 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+function getNextVersionName() {
+    return '1.17';
+}
+
 const config: Config = {
     title: 'Chaotic Trials',
     tagline: 'Minecraft Mods created for Forge and NeoForge',
@@ -35,6 +39,11 @@ const config: Config = {
                 docs: {
                     sidebarPath: './sidebars.ts',
                     editUrl: 'https://github.com/ChaoticTrials/Website/tree/main/',
+                    versions: {
+                        current: {
+                            label: `${getNextVersionName()}`,
+                        },
+                    },
                 },
                 blog: {
                     showReadingTime: true,
@@ -55,7 +64,7 @@ const config: Config = {
     ],
 
     themeConfig: {
-        // image: 'img/docusaurus-social-card.jpg',
+        image: 'img/social-card.png',
         navbar: {
             title: 'Chaotic Trials',
             logo: {

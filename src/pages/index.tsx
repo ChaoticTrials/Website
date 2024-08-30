@@ -34,8 +34,8 @@ export default function Home(): React.JSX.Element {
     const {siteConfig} = useDocusaurusContext();
     return (
         <Layout
-            title={siteConfig.title}
-            description="Description will go into a meta tag in <head />">
+            title="Overview"
+            description="Chaotic Trials - Trial and Error, with a lot of error">
             <HomepageHeader/>
             <main>
                 <FetchModData>
