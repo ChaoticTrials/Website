@@ -65,6 +65,19 @@ const config: Config = {
 
     themeConfig: {
         image: 'img/social-card.png',
+        docs: {
+            sidebar: {
+                hideable: true,
+                autoCollapseCategories: true
+            }
+        },
+        colorMode: {
+            respectPrefersColorScheme: true
+        },
+        announcementBar: {
+            backgroundColor: 'rgba(0,196,96,0.73)',
+            content: `🚀 <b><a target="_blank" href="/docs/porting/version/1.21">1.21</a> Porting Information</b> 🌟`,
+        },
         navbar: {
             title: 'Chaotic Trials',
             logo: {
