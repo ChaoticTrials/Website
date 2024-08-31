@@ -85,7 +85,7 @@ const ModTable: React.FC<ModTableProps> = ({data}) => {
                                             <a
                                                 href={
                                                     project.wiki_url ||
-                                                    `docs/mods/${typeof project.slug === 'string' ? project.slug : project.slug.mr}`
+                                                    `docs/wiki/mods/${typeof project.slug === 'string' ? project.slug : project.slug.mr}`
                                                 }
                                             >
                                                 {project.name}

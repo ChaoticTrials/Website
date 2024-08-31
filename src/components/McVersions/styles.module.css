@@ -1,0 +1,40 @@
+.versions {
+  display: flex;
+  align-items: center;
+  padding: 0 0 2rem 0;
+  width: 100%;
+  flex-direction: column;
+}
+
+.centeredRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.noLinkStyle {
+  text-decoration: none;
+  color: inherit;
+}
+
+.noLinkStyle:hover,
+.noLinkStyle:focus,
+.noLinkStyle:active {
+  text-decoration: none;
+  color: inherit;
+  background-color: transparent;
+}
+
+.zoomEffect {
+  transition: transform 0.2s ease;
+}
+
+.zoomEffect:hover {
+  transform: scale(1.1);
+}
+
+.customTitle {
+  font-family: "Annie Use Your Telescope", sans-serif;
+  font-size: 5rem;
+  color: var(--ifm-color-primary);
+}

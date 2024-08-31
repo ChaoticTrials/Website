@@ -77,7 +77,7 @@ const config: Config = {
         },
         announcementBar: {
             backgroundColor: 'rgba(0,196,96,0.73)',
-            content: `🚀 <b><a target="_blank" href="/docs/porting/version/1.21">1.21</a> Porting Information</b> 🌟`,
+            content: `🚀 <b><a target="_blank" href="/porting/version/1.21">1.21</a> Porting Information</b> 🌟`,
         },
         navbar: {
             title: 'Chaotic Trials',
@@ -94,8 +94,7 @@ const config: Config = {
                     label: 'Wiki',
                 },
                 {
-                    to: '/docs/next/porting',
-                    sidebarId: 'porting',
+                    to: '/porting',
                     position: 'left',
                     label: 'Porting Information',
                 },
