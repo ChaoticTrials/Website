@@ -13,7 +13,7 @@ interface Project {
 
 // Define a global constant for the headers
 const HEADERS = {
-    'User-Agent': 'GitHub@ChaoticTrials/Website'
+    'User-Agent': 'GitHub@ChaoticTrials/chaotictrials.github.io'
 };
 
 const CACHE_EXPIRATION_MS = 5 * 60 * 1000;

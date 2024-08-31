@@ -15,7 +15,7 @@ const config: Config = {
     baseUrl: '/',
 
     organizationName: 'ChaoticTrials',
-    projectName: 'Website',
+    projectName: 'chaotictrials.github.io',
 
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
@@ -38,7 +38,7 @@ const config: Config = {
             {
                 docs: {
                     sidebarPath: './sidebars.ts',
-                    editUrl: 'https://github.com/ChaoticTrials/Website/tree/main/',
+                    editUrl: 'https://github.com/ChaoticTrials/chaotictrials.github.io/tree/main/',
                     versions: {
                         current: {
                             label: `${getNextVersionName()}`,
@@ -52,7 +52,7 @@ const config: Config = {
                         type: ['rss', 'atom'],
                         xslt: true,
                     },
-                    editUrl: 'https://github.com/ChaoticTrials/Website/tree/main/',
+                    editUrl: 'https://github.com/ChaoticTrials/chaotictrials.github.io/tree/main/',
                     onInlineTags: 'warn',
                     onInlineAuthors: 'warn',
                     onUntruncatedBlogPosts: 'warn',
@@ -107,7 +107,7 @@ const config: Config = {
                     dropdownActiveClassDisabled: true,
                 },
                 {
-                    href: 'https://github.com/ChaoticTrials/Website',
+                    href: 'https://github.com/ChaoticTrials/chaotictrials.github.io',
                     label: 'GitHub',
                     position: 'right',
                 },
