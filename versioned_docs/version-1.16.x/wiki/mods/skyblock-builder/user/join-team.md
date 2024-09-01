@@ -2,15 +2,15 @@
 description: Everything about requesting to join other teams
 ---
 
-# Join requests
-## Sending a join request
-You can send a join request to all teams if you're currently in no team by using `/skyblock join <team>`. That will 
-send a request to the team and each player in the team can accept or deny your request.
+# Join Requests
+## Sending a Join Request
+If you are not currently in a team, you can send a join request to any team using the command `/skyblock join <team>`.
+This will send a request to the team, and each member of the team has the option to accept or deny your request.
 
-## Accepting requests
-Each user of a team can use `/skyblock team accept <player>` to accept the given player. That will teleport the player 
-to your island. You can also deny the request by using `/skyblock team deny <player>`.
+## Accepting Requests
+Team members can accept a join request from a player by using the command `/skyblock team accept <player>`. This action
+will teleport the player to your island. To deny the request, use the command `/skyblock team deny <player>`.
 
-## Disable requests
-You can see your teams current join request state with `/skyblock team allowRequests` and enable/disable it with 
-`/skyblock team allowRequests <true/false>`.
+## Disabling Requests
+You can check your team's current join request status with the command `/skyblock team allowRequests`. To enable or
+disable join requests, use the command `/skyblock team allowRequests <true/false>`.

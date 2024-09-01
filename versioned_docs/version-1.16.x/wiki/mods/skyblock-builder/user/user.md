@@ -1,25 +1,27 @@
 ---
-description: All executable commands by normal users
+description: All executable commands available to normal users.
 ---
 
-# End user/commands
-## Create an own island
-If users are allowed to create islands with their own command, you can use `/skyblock create <name> <players>`. 
-This will create a team, and the given players will be added to the new team. If no players are given, the user who 
-executes the command will be added to the team. If no name is given, a random name will be generated.
+# End User Commands
+## Creating Your Own Island
+To create an island using your own command, you can use `/skyblock create <name> <players>`.
+This will create a team and add the specified players to it. If no players are mentioned, the user executing the command will be added to the team. If no name is provided, a random name will be generated.
 
-## Rename team island
-You can rename a/your team by using `/skyblock team <new name> <team name>`. `<team name>` is optional. Can be used by 
-any team member. Users with permission level 2 could also edit other teams' name.
+## Renaming a Team Island
+You can rename your team by using `/skyblock team <new name> <team name>`. The `<team name>` parameter is optional. This command can be executed by any team member. Users with permission level 2 can also rename other teams.
 
-## Modify spawns
-If enabled in the config, you can modify spawns from your team. You can add them with `/skyblock team spawns add <pos>`. 
-If no position is given, the current position will be used. Remove them with `/skyblock team spawns remove <pos>`. Same 
-as before: position is optional. For users with permission level 2: `/skyblock team spawns reset <team>` will reset the 
-spawn points to the default ones. To add the spawns, you need to be within the range specified in the config.
+## Modifying Spawns
+If enabled in the configuration, you can modify spawns for your team:
+- Add a spawn: `/skyblock team spawns add <pos>`. If no position is specified, the current position will be used.
+- Remove a spawn: `/skyblock team spawns remove <pos>`. As before, the position is optional.
+- For users with permission level 2, to reset spawn points to their default settings: `/skyblock team spawns reset <team>`
 
-## Teleporting back to home island
-If home command is enabled in the config, you can teleport back to your teams' island with `/skyblock home`.
+:::note
+When adding spawns, ensure you are within the range specified in the configuration.
+:::
 
-## Teleporting to spawn island
-If teleporting to spawn is enabled in the config, you can teleport to spawn island with `/skyblock spawn`.
+## Teleporting Back to Home Island
+If the home command is enabled in the config, you can teleport back to your team's island using `/skyblock home`.
+
+## Teleporting to Spawn Island
+If teleporting to spawn is enabled in the config, you can teleport to the spawn island with `/skyblock spawn`.

@@ -6,9 +6,10 @@ description: Skyblock example map
 # Skyblock
 ![Starting template](/img/projects/skyblock-builder/examples/skyblock/start_template.png)
 
-This is the default island when using the mod. You don't have to adjust any config for this. Just use it.
+This is the default island provided by the mod. There's no need to adjust any configuration for this setup—just use it
+as it is.
 
-If you want another starting island, just replace the file `config/skyblockbuilder/default.nbt` and adjust
-the [spawns](../packdev/packdev.md#configuring-templates).
+If you'd like a different starting island, simply replace the `config/skyblockbuilder/default.nbt` file and adjust
+the [spawns](../packdev/packdev.md#configuring-templates) accordingly.
 
-_The next examples will contain downloads with all changed things._
+_The following examples will include downloads with all the relevant changes._

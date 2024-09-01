@@ -3,22 +3,23 @@ description: Defining a default start inventory
 ---
 
 # Inventory
-## Clear inventory
-If this option is selected, the users inventory will be deleted when joining the world the first time. This is useful
-if you don't want that other mods give the player items like guide books.
+## Clear Inventory
+If this option is selected, the user's inventory will be deleted when joining the world for the first time. This is
+useful if you don't want other mods to give the player items, such as guide books.
 
-Notice: This option will not affect the [starting inventory](#starting-inventory).
+:::note
+This option will not affect the [starting inventory](#starting-inventory).
+:::
 
-## Dropping inventory
-If this option is selected, the users inventory will be dropped when leaving a team.
+## Dropping Inventory
+If this option is selected, the user's inventory will be dropped when leaving a team.
 
 ## Starting inventory
-You can set a starting inventory by customising `config/skyblockbuilder/starter_item.json`. These items will be given to 
-the player only on initial joining world, not when joining a team. You can also set the items to a special slot with key
-`Slot`.
+You can set a starting inventory by customizing the `config/skyblockbuilder/starter_item.json` file. These items will be
+given to the player only when they initially join the world, not when joining a team. You can also assign items to
+specific slots using the `Slot` key.
 
 Available values for the slots are:
-
 - `mainhand` (default)
 - `offhand`
 - `head`
@@ -26,7 +27,8 @@ Available values for the slots are:
 - `legs`
 - `feet`
 
-The config could look like this:
+A sample configuration file might look like this:
+
 ```json title="config/skyblockbuilder/starter_item.json"
 {
   "items": [
@@ -45,6 +47,6 @@ The config could look like this:
 }
 ```
 
-If you want that every other item will be deleted, you can simply set the config option `inventory.clear` to true. This 
-will delete items like guide books or other things. That way, you don't have to go through all configs to enable these
-items and could just add them to the starter items.
+If you want all other items to be deleted, you can set the `inventory.clear` configuration option to `true`. This will
+remove items like guide books or other unwanted items, allowing you to only include desired items in the starter
+inventory without modifying all other configurations.

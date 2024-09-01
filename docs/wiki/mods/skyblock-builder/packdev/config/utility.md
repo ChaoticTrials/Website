@@ -1,28 +1,27 @@
 ---
-description: Manage some permissions
+description: Manage various permissions
 ---
 
 # Utility
-## Create own team
-This allows players to [create their own team](../../user/user.md#create-an-own-island).
+## Create Own Team
+Allows players to [create their own team](../../user/user.md#creating-your-own-island).
 
-## Self managing
-Allows the player to use several commands. This includes these commands:
-
+## Self-Management
+Enables the player to use several commands, including:
 - [Leaving the team](../admin.md#leaving-a-team)
 - [Accepting/declining join requests](../../user/join-team.md#accepting-requests)
 - [Accepting/declining invitations](../../user/invitations.md#accepting-invitations)
 - [Sending join requests](../../user/join-team.md#sending-a-join-request)
-- [Invite other players to join](../../user/invitations.md#inviting-users)
+- [Inviting other players to join](../../user/invitations.md#inviting-users)
 - [Modifying spawns](#modify-spawns)
 
 ## Spawns
-### Modify spawns
-This allows players to [modify spawns](../../user/user.md#modify-spawns). Needs [self managing](#self-managing) to be
+### Modify Spawns
+Allows players to [modify spawns](../../user/user.md#modifying-spawns). Requires [Self-Management](#self-management) to be
 enabled.
 
 ### Range
-The distance from the island center where the users should be able to add spawns.
+Defines the distance from the island center within which players can add spawns.
 
 ## Teleports
 ### Visits

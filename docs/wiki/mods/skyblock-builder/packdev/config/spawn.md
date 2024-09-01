@@ -4,32 +4,28 @@ description: Define the main settings for islands
 
 # Spawn
 ## Dimension
-This sets the dimension where you will spawn and the island be generated.
+Specifies the dimension where you will spawn and the island will be generated.
 
 Allowed values:
-
 - `overworld`
 - `the_nether`
 - `the_end`
 
 ## Direction
-This sets the direction in which the user will be looking at.
+Specifies the direction the user will be facing.
 
 Allowed values:
-
 - `north`
 - `east`
 - `south`
 - `west`
 
 ## Height
-This sets the bottom layer of the template.
-
-This affects where exactly the island will be generated.
+Specifies the bottom layer of the template, affecting the exact generation point of the island.
 
 Range: 0-255
 
 ## Radius
-The radius to find a valid spawn if no given spawn point is valid.
+Specifies the radius within which to find a valid spawn point if the original spawn point is invalid.
 
 Minimum: 0

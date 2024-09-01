@@ -3,34 +3,39 @@ description: Important information for admins
 ---
 
 # Managing teams
-## Operators only
-Only an operator with permission level 2 or higher can change anything in the `/skyblock manage` category.
+## Operators Only
+Only operators with permission level 2 or higher can make changes in the `/skyblock manage` category.
 
-## Creating teams
-Use the `/skyblock manage teams create <name>` command to generate a team with the given name. If no name is provided, 
-a random name will be generated.
+## Creating Teams
+To create a team with a specific name, use the command: `/skyblock manage teams create <name>`.
 
-Alternatively (good for servers), you can use `/skyblock manage teams createAndJoin` to create the team and join
-it. To use it on a server, you should put it in a command block which can be triggered by the user and runs this 
-command:
+If no name is provided, a random name will be generated.
 
+For server environments, you can use: `/skyblock manage teams createAndJoin`
+
+This will create the team and join it immediately. To automate this process on a server, place the command in a command
+block triggered by the user:
 `/execute as @p run skyblock manage teams createAndJoin`
 
-## Deleting teams
-Use the `/skyblock manage teams delete <name>` to delete the team with the given name.
+## Deleting Teams
+To delete a team with a specific name, use the command: `/skyblock manage teams delete <name>`
 
-**WARNING**! This cannot be undone. The island will still exist, but you can't re-bind a new team to that island. If users 
-are in the team, they will be teleported to spawn after dropping all their items.
+:::warning
+This action is irreversible. The island will remain, but cannot be re-bound to a new team. All users in the team will be
+teleported to spawn after dropping all their items.
+:::
 
-## Clearing teams
-Because teams can be empty, you can "clear" all islands. If you use `/skyblock manage teams clear <name>`, all empty 
-teams will be deleted as in [Deleting teams](#deleting-teams).
+## Clearing Teams
+Since teams can be empty, you can "clear" all islands. To delete all empty teams, use:
+`/skyblock manage teams clear <name>`
 
-If you provide a team name, all players from this team will be removed and teleported to spawn island.
+Refer to [Deleting Teams](#deleting-teams) for more information.
 
-## Leaving a team
-An operator need to remove players from a team. For that, they need to use `/skyblock manage kickPlayer <player>`. 
-The removed player will be teleported back to spawn after dropping all the items in the inventory.
+If a team name is provided, all players in that team will be removed and teleported to spawn island.
 
-If you're not op and want to leave your team, you can simply type in `/skyblock leave`. You will drop all your items 
-and be teleported to spawn.
+## Leaving a Team
+Operators can remove players from a team using the command: `/skyblock manage kickPlayer <player>`.
+Removed players will be teleported back to spawn after dropping all items in their inventory.
+
+Non-operators who wish to leave their team can use: `/skyblock leave`. This will drop all items and teleport the player
+to spawn.

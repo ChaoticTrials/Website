@@ -5,16 +5,14 @@ description: Adding mod compat into your own mod
 
 # Adding compat as mod dev
 ## Disable team management
-You can use the API to disable team management without the config needs to be changed. Additionally, you can disable
-that players will be teleported to spawn when joining the world.
-
-For more information about this, look
-[here 🔗](https://github.com/ChaoticTrials/SkyblockBuilder/blob/1.16.x/src/main/java/de/melanx/skyblockbuilder/util/CompatHelper.java).
-You can call this in the main constructor of your mod.
+You can use the API to disable team management without needing to change the configuration. Additionally, you can
+prevent players from being teleported to spawn when joining the world. For more information, visit
+the [SkyblockBuilder API documentation 🔗](https://github.com/ChaoticTrials/SkyblockBuilder/blob/1.16.x/src/main/java/de/melanx/skyblockbuilder/util/CompatHelper.java).
+This can be called in the main constructor of your mod.
 
 ## Custom Forge Events
-Skyblock Builder fires several events which you can subscribe like normal Forge events.
-These are all events:
+Skyblock Builder triggers several events which you can subscribe to, similar to normal Forge events. Here are all the
+events:
 
 - [Create Team](https://github.com/ChaoticTrials/SkyblockBuilder/blob/1.16.x/src/main/java/de/melanx/skyblockbuilder/events/SkyblockCreateTeamEvent.java)
 - [Invite Player](https://github.com/ChaoticTrials/SkyblockBuilder/blob/1.16.x/src/main/java/de/melanx/skyblockbuilder/events/SkyblockInvitationEvent.java#L53)
@@ -38,4 +36,4 @@ These are all events:
 - [Teleport Home](https://github.com/ChaoticTrials/SkyblockBuilder/blob/1.16.x/src/main/java/de/melanx/skyblockbuilder/events/SkyblockTeleportHomeEvent.java)
 - [Visit Island](https://github.com/ChaoticTrials/SkyblockBuilder/blob/1.16.x/src/main/java/de/melanx/skyblockbuilder/events/SkyblockVisitEvent.java)
 
-All events do have proper Javadoc which describe what they do.
+All events have proper Javadoc documentation explaining their functionality.

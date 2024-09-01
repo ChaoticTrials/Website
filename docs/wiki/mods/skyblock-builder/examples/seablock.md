@@ -8,7 +8,7 @@ description: Example Download for Seablock map
 ![Starting template](/img/projects/skyblock-builder/examples/seablock/start_template.png)
 _[Download](/img/projects/skyblock-builder/examples/downloads/1.17.x/seablock.zip)_
 
-To create a seablock like modpack, you can simply set the surface settings as you can see in the config below.
+To create a Seablock-like modpack, simply set the surface settings as shown in the config below:
 
 ```json title="config/skyblockbuilder/common-config.json5"
 {
@@ -23,13 +23,11 @@ To create a seablock like modpack, you can simply set the surface settings as yo
 }
 ```
 
-I added a lot of sandstone layers for the image. Additionally, in the download are a few more things changed. A few
-features and structures are enabled, too. The spawn height was changed to set the top of the island on top of the water
-layers.
+I added multiple sandstone layers for the image. Additionally, the download includes a few more changes. Some features
+and structures are enabled, and the spawn height is set to position the top of the island above the water layers.
 
-Here you can also see the single biome option.
-
-This example also contains the feature of multiple templates where you can see how to set it up correctly.
+Here you can also see the single biome option. This example demonstrates multiple templates, showing how to set them up
+correctly.
 
 ```json title="config/skyblockbuilder/templates.json5"
 {
@@ -78,6 +76,5 @@ This example also contains the feature of multiple templates where you can see h
 }
 ```
 
-Thanks to [benbenlaw 🔗](https://www.curseforge.com/members/benbenlaw/projects) for giving me permission to use the 
-templates from his well known modpack [Seaopolis 🔗](https://www.curseforge.com/minecraft/modpacks/seaopolis) for this
-example.
+Thanks to [benbenlaw 🔗](https://www.curseforge.com/members/benbenlaw/projects) for permitting the use of templates from
+his well-known modpack [Seaopolis 🔗](https://www.curseforge.com/minecraft/modpacks/seaopolis) for this example.

@@ -5,10 +5,9 @@ description: Example Download for Stoneblock map
 
 # Stoneblock
 ![Starting template](/img/projects/skyblock-builder/examples/stoneblock/start_template.png)
-_[Download](/img/projects/skyblock-builder/examples/downloads/1.17.x/stoneblock.zip)_
+[Download](/img/projects/skyblock-builder/examples/downloads/1.17.x/stoneblock.zip)
 
-To create a stoneblock like modpack, you can simply set the surface settings as you can see in the config below.
-
+To create a Stoneblock-like modpack, you can simply set the surface settings as shown in the configuration below.
 
 ```json title="config/skyblockbuilder/common-config.json5"
 {
@@ -23,9 +22,8 @@ To create a stoneblock like modpack, you can simply set the surface settings as 
 }
 ```
 
-The download file will also set the default world type to `Skyblock`. It will generate Bedrock at top and bottom of the
-dimension. It has only one spawn point. A starting inventory is included, too. Here you can see it:
-
+The downloaded file also sets the default world type to `Skyblock`, generating Bedrock at the top and bottom of the
+dimension. There is only one spawn point, and a starting inventory is included, as shown below:
 ![Starting item](/img/projects/skyblock-builder/examples/stoneblock/start_item.png)
 ```json title="config/skyblockbuilder/starter_item.json"
 {

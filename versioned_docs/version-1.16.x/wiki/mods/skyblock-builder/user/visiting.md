@@ -1,11 +1,12 @@
 ---
-description: Everything about visiting teams and manage permission
+description: Comprehensive guide on visiting and managing permissions for teams
 ---
 
 # Visiting
-## Visiting other islands
-If visits are enabled in the config, and a team enabled visiting, you can visit an island with `/skyblock visit <team>`.
+## Visiting Other Islands
+If visits are enabled in the configuration and a team has enabled visiting, you can visit an island using the command
+`/skyblock visit <team>`.
 
-## Enable visiting
-You can see your teams current visiting state with `/skyblock team allowVisits` and enable/disable it with 
-`/skyblock team allowVisits <true/false>`. On new teams, this is set to `false`.
+## Enabling Visiting
+To check the current visiting state of your team, use the command `/skyblock team allowVisits`. You can enable or
+disable visiting with `/skyblock team allowVisits <true/false>`. By default, new teams have this setting set to `false`.
