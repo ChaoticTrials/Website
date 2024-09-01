@@ -1,5 +1,6 @@
 ---
 title: Misc
+sidebar_position: 2
 description: UtilitiX' random additions
 ---
 
@@ -27,6 +28,26 @@ Increases the notification and glow range of the [Hand Bell](items.mdx#hand-bell
     </div>
 </div>
 
+### Dynamic Creeper Explosions
+When a Creeper explodes, the size of the explosion will now be adjusted based on the Creeper's current
+health. A healthier Creeper will cause a larger explosion, while a Creeper with low health will result in a smaller
+explosion. A Creeper with full health will cause as much damage as in vanilla.
+
+### Controlled Shovel Flattening
+This feature prevents players from flattening blocks using a shovel when the player is sneaking.
+
+### Illusioner in Raid
+The Illusioner will spawn in different raid waves during a raid as follows:
+
+- **Wave 2:** 5 Illusioners
+- **Wave 4:** 2 Illusioners
+- **Wave 6:** 2 Illusioners
+- **Wave 8:** 3 Illusioners
+
+### Sneaking Prevents Waterlogging
+While sneaking, waterloggable blocks will no longer get waterlogged. Instead, water will be placed as if waterlogging
+does not exist.
+
 ## Double Door Opening
 When two doors are placed next to each other with hinges in the center, both doors will open simultaneously.
 
@@ -34,7 +55,6 @@ When two doors are placed next to each other with hinges in the center, both doo
 When a seed item or sapling despawns, it will attempt to replant itself before discarding.
 
 ## Minecarts
-
 ### Ender Chest Minecart
 A minecart equipped with built-in ender chest functionality.
 
@@ -76,7 +96,7 @@ causes minimal damage (about a quarter of a heart) to entities during the push.
 :::info[tl;dr]
 - **Place**: Adds new rails where none exist.
 - **Replace**: Replaces existing rails with new ones.
-:::
+  :::
 
 Choose the appropriate mode based on whether you need to lay new tracks or upgrade existing ones. Understanding these
 modes ensures efficient management of your rail system.
