@@ -10,8 +10,7 @@ _[Download](/img/projects/skyblock-builder/examples/downloads/1.16.x/seablock.zi
 
 To create a seablock like modpack, you can simply set the surface settings as you can see in the config below.
 
-`config/skyblockbuilder/common-config.json5`:
-```json
+```json title="config/skyblockbuilder/common-config.json5"
 {
   "World": {
     "surface": true,

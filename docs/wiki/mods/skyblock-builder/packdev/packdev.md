@@ -43,9 +43,9 @@ schematic in `config/skyblockbuilder/template.nbt`.
 
 ## Configuring templates
 As described in [Creating a custom skyblock island](#creating-a-custom-skyblock-island), you can improve the readability
-of templates and set the spawn points for each template in the config here: `config/skyblockbuilder/templates.json5`.
+of templates and set the spawn points for each template in the config.
 There you have 2 options. First the `spawns`:
-```json
+```json title="config/skyblockbuilder/templates.json5"
 {
    "spawns": {
       "default": [
@@ -62,7 +62,7 @@ array. This array contains the spawn positions. The spawn positions are formatte
 ```
 
 Now the `templates`:
-```json
+```json title="config/skyblockbuilder/templates.json5"
 {
    "templates": [
     {

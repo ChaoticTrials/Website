@@ -7,7 +7,7 @@ description: Important information for pack developers
 You simply start the game once. It will generate a config called `forge-common.toml`. Change the only value in this
 config to `skyblockbuilder:custom_skyblock`, or use this example and create a file called `forge-common.toml` in the
 config directory with this content:
-```toml
+```toml title="config/forge-common.toml"
 [general]
 defaultWorldType = "skyblockbuilder:custom_skyblock"
 ```
