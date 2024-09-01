@@ -1,0 +1,93 @@
+---
+sidebar_position: 1
+description: UtilitiX' blocks
+---
+
+# Blocks
+
+## Experience Crystal
+The **Experience Crystal** is a block that lets players store and retrieve experience levels. This is particularly
+useful for saving XP for future use or transferring experience between players. The crystal attracts XP orbs within a
+7-block radius and collects them in its internal storage.
+
+## Crude Furnace
+The **Crude Furnace** offers a faster smelting alternative to the standard Furnace, working at twice the speed but
+yielding only half the experience. It can only process items that cannot be smelted by Smokers or Blast Furnaces.
+
+## Advanced Brewery
+The **Advanced Brewery** is an enhanced brewing mechanism for creating, modifying, and upgrading potions in Minecraft.
+
+### How It Works
+- **Fuel Mechanism**: Uses `Blaze Powder` as fuel, placed in a designated slot. Each unit fuels the brewery for 20
+  operations.
+- **Brewing Time**: Takes up to 400 ticks/20 seconds, with special particle effects during the process.
+
+<div class="two-columns-base">
+  <div class="two-columns-left">
+  - **Slots and Ingredients**:
+      - **Ingredient Slot (0)**: Place the primary ingredient required for brewing here.
+      - **Potion Ingredient Slots (1 and 2)**: Place existing potions to transform or upgrade them.
+      - **Output Slot (3)**: The finished potion appears here after brewing.
+      - **Blaze Slot (4)**: Place `Blaze Powder` here to fuel the process.
+  </div>
+  <div class="two-columns-right">
+    ![Advanced Brewery Screen](/img/projects/utilitix/advanced_brewery.png)
+  </div>
+</div>
+
+- **Item Handlers Interaction**:
+    - **Top**: Main ingredient and output interaction.
+    - **Sides**: Potion ingredients and fuel insertion.
+    - **Bottom**: Empty or remove potion ingredient slots.
+
+- **Potion Output**: Depending on the recipe, the brewery yields different potions, placed back into the designated
+  slots.
+
+### Modes of Operation
+- **Brewing**: Functions like a regular brewery. Place a potion in the center slot and a special ingredient in the input
+  slot. View brewing recipes in [JEI](https://modrinth.com/mod/jei).
+- **Merging**: Combines effects of two potions in the outer slots (1 and 2) into a new potion. The center slot must
+  contain a Glass Bottle, and the ingredient slot (0) should be empty. Complex potions may result in
+  a [Failed Potion](items.mdx#failed-potion).
+- **Upgrading**: Enhances potions with a single effect, increasing the amplifier up to III. Place the potion to be
+  upgraded in the center slot and a Popped Chorus Fruit in the ingredient slot (0).
+- **Cloning**: Duplicates a potion. Place the potion to be cloned in the center slot and two Water Bottles in the outer
+  slots. Put Netherite Scrap in the ingredient slot to clone the potion.
+
+## Weak Redstone Torch
+The **Weak Redstone Torch** functions similarly to a regular redstone torch but does not strongly power the block above
+it. This is useful for providing a redstone signal without affecting adjacent blocks.
+
+## Comparator Redirector
+The **Comparator Redirector** redirects comparator readings from blocks above or below it, making it useful for reading
+the state of containers like chests from below.
+
+## Linked Repeater
+The **Linked Repeater** is a wireless redstone repeater that uses [Linked Crystals](items.mdx#linked-redstone-crystal)
+to transmit redstone signals over distances without needing wires.
+
+## Rails
+### Highspeed Rail
+The **Highspeed Rail** provides a faster alternative to the Powered Rail but cannot be used on slopes. It is ideal for
+creating high-speed minecart tracks on flat surfaces.
+
+### Directional Rail
+The **Directional Rail** moves minecarts in a single direction without external power sources, useful for automated
+pathways with specific directional flows.
+
+### Filter Rail
+The **Filter Rail** sorts minecarts based on their label, set with a [Minecart Tinkerer](items.mdx#minecart-tinkerer).
+Labeled minecarts go sideways, while others continue straight.
+
+### Reinforced Rail
+The **Reinforced Rail** maintains high speed on turns, similar to [Highspeed Rails](#highspeed-rail), but cannot be used
+on slopes.
+
+### Piston Minecart Controller Rail
+The **Piston Minecart Controller Rail** manages [Piston Minecarts](misc.mdx#piston-minecart). Labels set with
+a [Minecart Tinkerer](items.mdx#minecart-tinkerer) configure the mode for Piston Minecarts traveling over it. These
+rails are not replaced by Piston Minecarts.
+
+## Vanilla Extension
+### Stone Wall
+Just a **Stone Wall** because vanilla doesn't add one.

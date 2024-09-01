@@ -1,0 +1,63 @@
+---
+description: Useful tools for Skyblock modpacks
+---
+
+# Skyblock Ultima Tools
+
+import ProjectHeader from '@site/src/components/ProjectHeader';
+
+<ProjectHeader slug="skyblock-ultima-tools" mcVersion="1.17" />
+
+Welcome to the Skyblock Ultima Tools mod wiki. This mod introduces a variety of powerful tools, each with unique
+abilities, enhancing your Skyblock experience. Below are the various tools included in the mod along with their
+descriptions.
+
+---
+
+:::warning
+None of the items have recipes. You need to add them yourself or distribute the items in another way.
+:::
+
+## Regular Tools
+### Crafting Ingredients
+- Forest-Runner
+- Knight
+- Lighter
+
+### Functional Tools
+| **Item**       | **Ability**                                                                                                                                                          | **[Cooldown](#config) (in s)** |
+|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------|
+| Beginner       | Places water                                                                                                                                                         | 10                             |
+| Scholar        | Converts dirt to grass block                                                                                                                                         | 10                             |
+| Farmer         | Acts like an unlimited amount of bonemeal                                                                                                                            | 60                             |
+| Soothsayer     | Applies a potion effect to the target: <br/> - Instant Damage (5 hearts) <br/> - Poison (30s) <br/> - Wither (30s) <br/> - Weakness (30s) <br/> - Slowness III (30s) | 10                             |
+| Blood-Magician | Spawns a random animal                                                                                                                                               | 60                             |
+| Ultima-Fighter | Generates a random ore if used on (cobble) stone                                                                                                                     | 10                             |
+| Cursed-Knight  | Deals 30 hearts of damage                                                                                                                                            | 60                             |
+| Ultima-God     | If sneaking: Places water, spawns animals, or acts as bonemeal. <br/> Otherwise: Converts dirt into grass block or (cobble) stone into ores                          | 10                             |
+| Ore-Better     | Allows you to upgrade your ores                                                                                                                                      | 10                             |
+
+## Krypto Tools
+### Crafting Ingredients:
+- Krypto Forest-Runner
+- Krypto Knight
+- Krypto Lighter
+
+### Functional Tools
+| **Item**              | **Ability**                           | **[Cooldown](#config) (in s)** |
+|-----------------------|---------------------------------------|--------------------------------|
+| Krypto Beginner       | Removes a fluid                       | 10                             |
+| Krypto Scholar        | Converts dirt into stone              | 10                             |
+| Krypto Farmer         | Converts dirt into moist farmland     | 10                             |
+| Krypto Soothsayer     | Converts (cobble) stone into coal ore | 10                             |
+| Krypto Blood-Magician | Applies regeneration to the user      | 10                             |
+| Krypto Cursed-Knight  | Applies levitation to the user        | 10                             |
+
+## Config
+In the config, you can change the ores for the **Ultima-Fighter** in `ores.overworld`. The order is important!
+`ores.nether` is not used. That's something I just realized while writing this.
+
+`animals.animals` defines the animals that are spawned by **Blood-Magician** when used on land, and
+`animals.water_animals` defines the animals spawned when used in water.
+
+All the other config values are the cooldown durations in ticks for each tool.

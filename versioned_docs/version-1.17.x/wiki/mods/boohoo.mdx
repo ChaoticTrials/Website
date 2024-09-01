@@ -1,0 +1,39 @@
+# Boohoo!
+
+import ProjectHeader from '@site/src/components/ProjectHeader';
+
+<ProjectHeader slug="boohoo" mcVersion="1.17" />
+
+This mod was made for [SpookyJam 2021](https://www.curseforge.com/minecraft/modpacks/spookyjam-2021-forge-edition).
+
+## Ghost Features
+
+- It contains a ghost which could spawn at night.
+- The chance for being summoned is configurable.
+- Default chance is **0.1%** each tick that a ghost spawns next to you.
+
+## Health Mechanics
+
+- The health increases by attacking other players and entities. It decreases when the player gets damage.
+- The health can also be configured by a multiplier in the config.
+
+## Player and Ghost Interaction
+
+- Each player can only have one ghost each night.
+- If the ghost kills you, it will stay in the world and fly around a bit, without targeting other players.
+- The ghost disappears after (default) 60 seconds.
+- It will steal a random item from you when it kills you (configurable). This item will be dropped when the ghost disappears or dies.
+
+## Ghost Drops
+
+- The ghost drops 1 to 2 enchanted books with a random enchantment.
+- For each book, there is a 5% chance that the enchantment level is the highest possible level for this enchantment.
+- There is a 50% chance that the level is max level + 1 if you get this book.
+
+## Configurable Settings
+
+- The ghost disappears at day (configurable).
+- If you want to disable the ghost in any dimension, there's a list in the config for that.
+
+
+![](/img/projects/boohoo.png)

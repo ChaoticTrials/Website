@@ -1,0 +1,40 @@
+---
+description: A mod which applies a random curse with a configurable chance each night to a random enchantable item in players inventory.
+---
+
+# Curse of Curses
+
+import ProjectHeader from '@site/src/components/ProjectHeader';
+
+<ProjectHeader slug="curse-of-curses" mcVersion="1.17" />
+
+This mod adds a layer of challenge and unpredictability to gameplay. It applies random curses to random
+items at random times to the player. For adjusting the chance, please use the config file.
+
+---
+
+## Config
+You can set various aspects of how the curses are applied via the config file. These include the times at which curses
+might be applied, their probabilities, and other features.
+
+## Danger Times
+You can set the number of "danger times" during a Minecraft day when curses can be applied. By default, there are 3
+danger times between ticks 18000 and 21000. At these specified ticks, each player has a chance to receive curses based
+on the configured probability. The default chance is 1% for each item, and the curses will continue to be applied to
+multiple items unless configured otherwise.
+
+## Cursed Items
+Curse of Curses not only applies curses to normal items but also to already cursed items. If there is no matching curse
+available for a particular item, it will not receive an additional curse.
+
+## Cursed Sleep
+For players who wish to escape the curses, Curse of Curses includes a feature that applies curses while sleeping. By
+default, this feature is enabled. If you only want to punish players who sleep multiple times, you can set a row count,
+and curses will only be applied after a specific number of sleeps.
+
+## Blacklisted Curses
+If there are specific curses that you do not want to be applied by this mod, you can use the `blacklistedCurses` option
+in the config file. Simply add the curses you want to ignore to the denylist. For example:
+
+- `"minecraft:*"` -> ignores all curses added by Minecraft
+- `"minecraft:binding_curse"` -> ignores Curse of Binding
