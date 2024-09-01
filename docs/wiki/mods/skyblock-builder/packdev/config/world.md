@@ -34,20 +34,16 @@ Minimal separation will be set to 0 if the modifier changes it to be lower than 
 **This config option needs a full restart once you already joined a world.**
 
 ## Surface
-The block settings for generating the overworld surface. It's in the same format as 
+The block settings for generating the different dimensions surfaces. It's in the same format as 
 [flat world generation settings 🔗](https://minecraft.fandom.com/wiki/Superflat#Preset_code_format), but will ignore
-the biome. You can set it for the overworld only. If the surface is disabled, it will ignore the setting.
+the biome. You can set it for each dimension. Instead of removing the dimension from the list, just set it to an empty
+string to generate it completely void. If the surface is disabled, it will ignore the setting.
 
 ## Single biome
 ### Biome
-Specifies the biome for a whole dimension. You can set the dimension you want. If you keep it as `default`, the 
+Specifies the biome for a whole dimension. A list with all possible structures can be found in
+`config/skyblockbuilder/data/biomes.txt`. You can set the dimension you want. If you keep it as `null`, the
 [start dimension](spawn.md#dimension) will be used.
 
-Allowed values:
-
-- `default`
-- `overworld`
-- `the_nether`
-- `the_end`
-
-**WARNING**: Some structures need a special biome, e.g. Mansion needs Dark Oak Forest! These structures will not be generated if you have only one biome!
+**WARNING**: Some structures need a special biome, e.g. Mansion needs Dark Oak Forest! These structures will not be 
+generated if you have only one biome!

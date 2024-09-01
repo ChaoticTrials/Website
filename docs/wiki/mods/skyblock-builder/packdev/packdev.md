@@ -7,9 +7,9 @@ description: Important information for pack developers
 You simply start the game once. It will generate a config called `forge-common.toml`. Change the only value in this
 config to `skyblockbuilder:custom_skyblock`, or use this example and create a file called `forge-common.toml` in the
 config directory with this content:
-```toml
+```toml title="config/forge-common.toml"
 [general]
-defaultWorldType = "skyblockbuilder:custom_skyblock"
+   defaultWorldType = "skyblockbuilder:custom_skyblock"
 ```
 
 ## Setting world type on server as default
@@ -23,29 +23,63 @@ Otherwise, it's the same as in [single player](#setting-world-type-on-single-pla
    Alternatively, you can also use the vanilla Structure Block. Keep in mind that this can only save islands up to
    48x48x48 blocks and the output is in `<minecraft>/saves/<world>/generated/minecraft/structures/<name>.nbt`.
 3. Copy the generated file from its directory (see previous step) to `config/skyblockbuilder/templates/<name>.nbt`.
-4. Set the possible spawns in `config/skyblockbuilder/spawns.json`. There can be multiple spawns, each one is an array
-   with `[x, y, z]` relative to the 0, 0, 0 from the template structure. You can also
+4. [Configure the template with a better readable name and spawns](#configuring-templates) in
+   `config/skyblockbuilder/templates.json5`. There can be multiple spawns, each one is an array with `[x, y, z]`
+   relative to the 0, 0, 0 from the template structure. You can also
    [modify existing spawns](../user/user.md#modify-spawns) and export them with `/skyblock spawns EXPORT`.
    IMPORTANT: You need to be in a world with world-type `Skyblock` to use the commands.
-5. To view your current spawns, you need to use the `/reload` command to reload the config. After that, you need to use
-   the `/skyblock spawns true` command to view all possible spawn points.
-6. Repeat step 4 and 5 until everything is correct.
+5. To view your current spawns, you need to run `/skyblock spawns debug` to view all possible spawn points.
+6. To apply the new spawn points to your template, copy the exported spawn points (you need to open the file) into the
+   file `config/skyblockbuilder/templates.json5` where needed.
 
 ## Setting multiple templates
 You can set multiple schematics by putting them into `config/skyblockbuilder/templates/`. These schematics can the user
-use by pressing the `Customize` button in world options screen or changing the schematic with
-command `/skyblock manage islandShape <template>`.
+use by pressing the `Customize` button in world options screen or changing the schematic with command
+`/skyblock manage islandShape <template>` where `<template>` is the name specified in
+[next chapter](#configuring-templates).
 
 **IMPORTANT**: DO NOT name any of these schematic files `template.nbt` because it would be overwritten by the default
 schematic in `config/skyblockbuilder/template.nbt`.
 
-## Possible spawns
-Possible spawns are set in `config/skyblockbuilder/spawns.json`. For each player, the game will choose a random position
-and places the player on that position. Good on big islands when adding a lot of players at once at one team. You can
-also export your current spawn points with command `/skyblock spawns EXPORT`. For this, you should first
-[modify spawns](../user/user.md#modify-spawns). You will find your exported spawns in `skyblock_exports/spawns.json`.
-Copy it in the main config folder and override the existing one to apply your new spawns.
-If you spawn inside a block, you could add this block to the
+## Configuring templates
+As described in [Creating a custom skyblock island](#creating-a-custom-skyblock-island), you can improve the readability
+of templates and set the spawn points for each template in the config here: `config/skyblockbuilder/templates.json5`.
+There you have 2 options. First the `spawns`:
+```json
+{
+   "spawns": {
+      "default": [
+         [ 6, 3, 5 ]
+      ]
+   }
+}
+```
+This option holds multiple objects. The key (here `default`) is important for the `templates` option in the next step.
+You can have multiple entries, but keep in mind that **no key** can be used twice! The content of each object is an
+array. This array contains the spawn positions. The spawn positions are formatted this way:
+```
+[ x, y, z ]
+```
+
+Now the `templates`:
+```json
+{
+   "templates": [
+    {
+      "name": "default",
+      "file": "default.nbt",
+      "spawns": "default"
+    }
+  ]
+}
+```
+
+- The `name` is the name displayed in the `Customize` screen when selecting the world-type.
+- The `file` is the name of the file for that template.
+- The `spawns` is the spawn configuration name from the `spawns` option.
+  You can have the same file and the same spawns in multiple configurations. They all are only separated by the name.
+
+**NOTE**: If you spawn inside a block, you could add this block to the
 [block tag 🔗](https://minecraft.fandom.com/wiki/Tutorials/Creating_a_data_pack#Tags)
 `#skyblockbuilder:additional_valid_spawns`.
 

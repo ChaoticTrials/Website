@@ -6,11 +6,11 @@ description: Define the main settings for islands
 ## Dimension
 This sets the dimension where you will spawn and the island be generated.
 
-Values for vanilla dimensions:
+Allowed values:
 
-- `minecraft:overworld`
-- `minecraft:the_nether`
-- `minecraft:the_end`
+- `overworld`
+- `the_nether`
+- `the_end`
 
 ## Direction
 This sets the direction in which the user will be looking at.
